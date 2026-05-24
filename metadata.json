@@ -1,0 +1,6 @@
+{
+  "name": "Lifeline Communi-Care",
+  "description": "Premium corporate website for Lifeline Communi-Care (Pty) Ltd - Professional First Aid Training, emergency preparedness, medical supply, and consumables.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
