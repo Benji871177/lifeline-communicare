@@ -52,12 +52,12 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: 'first-aid-training',
     numberLabel: '01',
     title: 'Informational Community First Aid',
-    shortDescription: 'Community-driven safety awareness courses tailored for schools, churches, local businesses, and youth programs. An accessible, equipment-free informational share.',
-    fullDescription: 'Our Informational Community First Aid programs provide crucial safety wisdom and intuitive guidance directly to local centers, youth programs, church groups, and businesses. We focus on an equipment-free, practical "infoshare" approach that removes barriers to entry, giving everyone the confidence to step up and preserve lives.',
+    shortDescription: 'Community-driven emergency awareness courses tailored for schools, churches, local businesses, and youth programs. An accessible, equipment-free informational share.',
+    fullDescription: 'Our Informational Community First Aid programs provide crucial emergency wisdom and intuitive guidance directly to local centers, youth programs, church groups, and businesses. We focus on an equipment-free, practical "infoshare" approach that removes barriers to entry, giving everyone the confidence to step up and preserve lives.',
     benefits: [
       'Tailored approach for schools, churches, local businesses, and youth networks',
       'Accessible, pure informational sharing (infoshare) with no equipment required',
-      'Hands-on CPR instruction and responsive community safety orientation',
+      'Hands-on CPR instruction and responsive community emergency orientation',
       'Encourages civic readiness, helping everyday community members save lives'
     ],
     iconName: 'GraduationCap'
@@ -67,12 +67,12 @@ export const SERVICES_DATA: ServiceItem[] = [
     numberLabel: '02',
     title: 'First Aid Kits: Supply & Support',
     shortDescription: 'Sourcing and delivery of first aid kits customized for schools, churches, and community spaces.',
-    fullDescription: 'We supply premium first aid responder kits tailored for local environments. We support schools, churches, and youth programs using a friendly, practical approach to ensure they have fully stocked, ready-to-use kits for basic safety and emergency guidance.',
+    fullDescription: 'We supply premium first aid responder kits tailored for local environments. We support schools, churches, and youth programs using a friendly, practical approach to ensure they have fully stocked, ready-to-use kits for basic emergency and emergency guidance.',
     benefits: [
-      'Top-standard safety equipment designed for schools, churches, and local organizations',
+      'Top-standard emergency equipment designed for schools, churches, and local organizations',
       'Customized kit assembly tailored directly to your community needs',
       'Helpful routine replenishment assistance & expired-stock swaps',
-      'Promotes safe civic readiness and everyday group safety standards'
+      'Promotes safe civic readiness and everyday group preparedness standards'
     ],
     iconName: 'BriefcaseMedical'
   },
@@ -99,7 +99,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     benefits: [
       'Interactive presentations with helpful lifesaving guidance demonstrations',
       'Clear vocational roadmap outlines for future paramedic or trauma specialists',
-      'Real-world community safety case discussions for schools and community centers',
+      'Real-world community emergency case discussions for schools and community centers',
       'Engaging discussions on civic empathy, voluntary rescue corps, and community contribution'
     ],
     iconName: 'UsersRound'
@@ -114,8 +114,8 @@ export const PRODUCTS_DATA: ProductItem[] = [
     description: 'Heavy-duty steel or durable ABS case containing comprehensive components designed for school halls, youth groups, and local gathering spots.',
     specifications: [
       'Includes triangular bandages, Gauze Swabs, CPR mouthpieces, and sterile dressings',
-      'Pre-labeled compartments with friendly safety instructions inside',
-      'Fully stocked with clean, simple, easy-to-read safety guidelines',
+      'Pre-labeled compartments with friendly emergency instructions inside',
+      'Fully stocked with clean, simple, easy-to-read emergency guidelines',
       'Features high-visibility retroreflective friendly signage'
     ],
     highlights: [
@@ -147,7 +147,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
     id: 'sterile-consumables-pack',
     category: 'consumables',
     name: 'Consumables Restock Bundle (Community & Workspace)',
-    description: 'Perfect for local classrooms, church halls, recreational centers, and friendly group safety support.',
+    description: 'Perfect for local classrooms, church halls, recreational centers, and friendly group emergency support.',
     specifications: [
       '100x Non-woven swabs & clean medical-grade tape rolls',
       'Professional conforming bandages & skin-prep protective wipes',
@@ -169,7 +169,7 @@ export const EMERGENCY_GUIDES: EmergencyActionGuide[] = [
     title: 'Cardiopulmonary Resuscitation (CPR)',
     symptom: 'Patient is unresponsive, is not breathing normally, or is breathing in irregular agonal gasps.',
     steps: [
-      'Confirm scene safety first to prevent placing yourself in immediate danger.',
+      'Confirm scene is safe first to prevent placing yourself in immediate danger.',
       'Tap patient loudly on shoulders and shout "Are you okay?" to confirm lack of response.',
       'Shout for help, call emergency dispatchers, and locate an Automated External Defibrillator (AED) immediately.',
       'Begin chest compressions immediately: Place the heel of one hand in the center of the chest, interlock other hand over it.',

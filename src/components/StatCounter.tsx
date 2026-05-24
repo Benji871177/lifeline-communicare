@@ -62,7 +62,7 @@ export default function StatCounter() {
           {/* Main high-impact red counter */}
           <div id="stat-main-headline-block" className="col-span-12 lg:col-span-5 text-center lg:text-left space-y-4">
             <span className="text-xs font-mono font-bold tracking-widest text-brand-red uppercase block">
-              Established Safety Competence
+              Established Emergency Competence
             </span>
             <div className="inline-flex items-center justify-center lg:justify-start gap-1.5">
               <span className="text-7xl sm:text-8xl font-display font-extrabold text-brand-red tracking-tighter select-none">
@@ -78,7 +78,7 @@ export default function StatCounter() {
               </div>
             </div>
             <p className="text-zinc-650 text-sm max-w-md mx-auto lg:mx-0 leading-relaxed">
-              With over three decades of professional emergency, clinical support, and classroom safety expertise, Robbie and the team deliver engaging educational sessions.
+              With over three decades of professional emergency, clinical support, and emergency awareness expertise, Robbie and the team deliver engaging educational sessions.
             </p>
           </div>
 
@@ -114,7 +114,7 @@ export default function StatCounter() {
                 <HeartHandshake className="w-6 h-6" />
               </div>
               <div className="space-y-1 text-left">
-                <h4 className="font-display font-bold text-sm text-zinc-900">Personalized Safety Talks</h4>
+                <h4 className="font-display font-bold text-sm text-zinc-900">Personalized Awareness Talks</h4>
                 <p className="text-zinc-500 text-xs leading-relaxed font-sans">
                   Custom interactive sessions and friendly lessons led directly by Robbie, a veteran medical professional.
                 </p>
@@ -128,7 +128,7 @@ export default function StatCounter() {
               <div className="space-y-1 text-left">
                 <h4 className="font-display font-bold text-sm text-zinc-900">Gauteng & Beyond Coverage</h4>
                 <p className="text-zinc-500 text-xs leading-relaxed font-sans">
-                  Building deep local safety partnerships, maintaining reliable safety cabinets, and training life-savers.
+                  Building deep local emergency partnerships, maintaining reliable emergency cabinets, and training life-savers.
                 </p>
               </div>
             </div>

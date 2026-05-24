@@ -30,11 +30,11 @@ export default function EmergencyGuide() {
           {/* Critical Citation Badge */}
           <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/20 px-4 py-2 rounded-2xl text-xs text-brand-red font-mono font-bold uppercase mt-2">
             <AlertTriangle className="w-4 h-4 text-brand-red animate-bounce shrink-0" />
-            <span>CRITICAL RULE: NO MEDICAL BACKGROUND REQUIRED TO LEARN</span>
+            <span>CRITICAL EMERGENCY BULLETIN</span>
           </div>
 
           <p className="text-zinc-600 text-sm leading-relaxed max-w-2xl mx-auto pt-3">
-            Our priority is to spread life-preserving knowledge throughout school classrooms, local churches, and neighborhood teams. Below is an interactive snapshot of three direct step-by-step responder workflows taught within our community-driven safety sessions.
+            Our priority is to spread life-preserving knowledge throughout school classrooms, local churches, and neighborhood teams. Below is an interactive snapshot of three direct step-by-step responder workflows taught within our community-driven emergency awareness sessions.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function EmergencyGuide() {
                 <span>Immediate Danger Note</span>
               </span>
               <p className="text-[11px] leading-relaxed text-zinc-700 text-left">
-                These summaries are for general civic awareness. For personalized safety presentations, interactive community infoshare workshops, and safety reviews within your home, school, church, or organization, feel free to schedule our community sessions.
+                These summaries are for general civic awareness. For personalized emergency awareness presentations, interactive community infoshare workshops, and emergency readiness tips within your home, school, church, or organization, feel free to schedule our community sessions.
               </p>
             </div>
           </div>

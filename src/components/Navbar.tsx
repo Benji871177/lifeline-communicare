@@ -42,7 +42,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => handleNavClick('home')}
           >
-            <div className="relative flex items-center justify-center w-14 h-14 bg-white rounded-xl border-2 border-brand-red shadow-md overflow-hidden transition-all duration-300 group-hover:scale-105 p-1">
+            <div className="relative flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-2xl border-2 border-brand-red shadow-xl overflow-hidden transition-all duration-300 group-hover:scale-105 p-1.5">
               <img
                 src="https://i.postimg.cc/hvqPMQ0g/Whats-App-Image-2026-05-24-at-17-09-18.jpg"
                 alt="Lifeline Communi-Care Logo"

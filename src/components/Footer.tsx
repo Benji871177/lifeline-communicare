@@ -37,7 +37,7 @@ export default function Footer({ onPageChange }: FooterProps) {
           {/* Brand Presentation & Taglines */}
           <div id="footer-branding-column" className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-14 h-14 bg-white rounded-xl border border-brand-red overflow-hidden shadow-sm p-1">
+              <div className="flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-2xl border border-brand-red overflow-hidden shadow-md p-1.5">
                 <img
                   src="https://i.postimg.cc/hvqPMQ0g/Whats-App-Image-2026-05-24-at-17-09-18.jpg"
                   alt="Lifeline Communi-Care Logo"
@@ -48,7 +48,7 @@ export default function Footer({ onPageChange }: FooterProps) {
             </div>
             
             <p className="text-zinc-400 text-sm leading-relaxed max-w-sm">
-              We empower communities through strategic emergency awareness and friendly safety preparedness sessions. No medical background required.
+              We empower communities through strategic emergency awareness and friendly emergency preparedness sessions.
             </p>
 
             <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3 py-1.5 rounded-lg text-xs font-mono text-brand-red font-semibold">
@@ -85,7 +85,7 @@ export default function Footer({ onPageChange }: FooterProps) {
             <ul className="space-y-2 text-xs text-zinc-400 leading-relaxed">
               <li className="flex items-start gap-1">
                 <span className="text-brand-red">&bull;</span>
-                <span>Community &amp; Classroom Safety Infoshare Sessions</span>
+                <span>Community &amp; Classroom Emergency Infoshare Sessions</span>
               </li>
               <li className="flex items-start gap-1">
                 <span className="text-brand-red">&bull;</span>

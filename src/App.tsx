@@ -53,45 +53,6 @@ export default function App() {
                 {/* Animated Experience Stat Counters */}
                 <StatCounter />
 
-                {/* Compact Embedded Spliced Emergency Banner */}
-                <section id="fast-awareness-banner" className="bg-brand-red text-white py-14 overflow-hidden relative">
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="w-full h-full bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
-                  </div>
-                  
-                  <div className="max-w-5xl mx-auto px-4 text-center space-y-6 relative z-10">
-                    <div className="flex items-center justify-center space-x-2.5">
-                      <Siren className="w-8 h-8 text-white fill-white/10 animate-pulse shrink-0" />
-                      <span className="font-mono text-xs font-extrabold uppercase tracking-widest text-brand-red-light bg-white/15 px-3 py-1 rounded-full">
-                        Critical Safety Bulletin
-                      </span>
-                    </div>
-
-                    <h3 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight leading-snug">
-                      “An emergency is a sudden, unexpected, and dangerous situation that poses an immediate threat to life or health.”
-                    </h3>
-
-                    <p className="text-zinc-100 text-sm max-w-2xl mx-auto leading-relaxed">
-                      Our mission is to spread life-preserving knowledge throughout all school classrooms and corporate teams. In South Africa, quick and correct reaction during the golden hour reduces tragedy.
-                    </p>
-
-                    <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-mono">
-                      <div className="bg-white/10 border border-white/20 p-3 rounded-xl flex items-center gap-2">
-                        <ShieldCheck className="w-5 h-5 text-brand-accent shrink-0" />
-                        <span className="font-bold">No Medical Background Required</span>
-                      </div>
-                      
-                      <button
-                        onClick={() => handlePageChange('emergency-prep')}
-                        className="bg-white hover:bg-zinc-100 text-brand-red font-bold px-5.5 py-3 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer inline-flex items-center gap-2"
-                      >
-                        <span>Access Emergency Guideline</span>
-                        <ArrowRight className="w-4.5 h-4.5" />
-                      </button>
-                    </div>
-                  </div>
-                </section>
-
                 {/* Focus and Reason: Community Targeted Audiences */}
                 <CommunityImpactSection />
 
@@ -110,7 +71,7 @@ export default function App() {
                         Are your first aid stations and kit boxes fully prepared?
                       </h3>
                       <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                        We source, pack, and deliver emergency kit sets. We offer friendly safety replenishments and informational guides across Gauteng and broader South African regions.
+                        We source, pack, and deliver emergency kit sets. We offer friendly emergency replenishments and informational guides across Gauteng and broader South African regions.
                       </p>
                     </div>
 

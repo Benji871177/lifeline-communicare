@@ -35,7 +35,7 @@ export default function ContactForm() {
         phoneNumber: '',
         companyName: '',
         subject: targetSubject,
-        message: `Hi Robbie, I would like to inquire about sourcing the following safety supply: "${productName}" for our community/school/workspace. Please get in touch with me so I can share details of what we require.`
+        message: `Hi Robbie, I would like to inquire about sourcing the following emergency supply: "${productName}" for our community/school/workspace. Please get in touch with me so I can share details of what we require.`
       });
       
       // Clear once processed
@@ -72,7 +72,7 @@ export default function ContactForm() {
         phoneNumber: '',
         companyName: '',
         subject: mappedSubject,
-        message: `Hi Robbie, I would like to request a customized quote and get additional safety guidance specifications regarding your service: "${serviceTitle}". Please contact me with details.`
+        message: `Hi Robbie, I would like to request a customized quote and get additional emergency preparedness specifications regarding your service: "${serviceTitle}". Please contact me with details.`
       });
 
       const element = document.getElementById('contact-form-anchor');
@@ -98,7 +98,7 @@ export default function ContactForm() {
         phoneNumber: '',
         companyName: '',
         subject: targetSubject,
-        message: `Hi Robbie, I would like to inquire about sourcing the following safety supply: "${productName}" for our community/school/workspace. Please get in touch with me so I can share details of what we require.`
+        message: `Hi Robbie, I would like to inquire about sourcing the following emergency supply: "${productName}" for our community/school/workspace. Please get in touch with me so I can share details of what we require.`
       });
 
       const element = document.getElementById('contact-form-anchor');
@@ -184,7 +184,7 @@ export default function ContactForm() {
           </h2>
           <div className="h-1 w-20 bg-brand-red mx-auto rounded-full" />
           <p className="text-zinc-650 text-sm sm:text-base leading-relaxed">
-            Need certified corporate training or bulk supplies? Submit your request below, and Robbie’s technical safety desk will construct a custom proposal aligned with national first aid criteria.
+            Need certified corporate training or bulk supplies? Submit your request below, and Robbie’s technical emergency awareness desk will construct a custom proposal aligned with national first aid criteria.
           </p>
         </div>
 
@@ -310,7 +310,7 @@ export default function ContactForm() {
               </div>
               
               <p className="text-zinc-500 text-[10px] leading-relaxed italic text-left">
-                * Our friendly safety instructors and delivery team travel directly to your school, church, youth center, or business to host active informational safety sessions.
+                * Our friendly emergency awareness instructors and delivery team travel directly to your school, church, youth center, or business to host active informational safety sessions.
               </p>
             </div>
 
@@ -422,7 +422,7 @@ export default function ContactForm() {
                       <option value="Supply & Maintenance of Kits">Source, supply, deliver &amp; maintain First Aid Kits</option>
                       <option value="Medical Consumables Procurement">Dentist, GP, or Clinic Consumables Procurement</option>
                       <option value="EMS Vocational Career Lectures">Life Orientation / Vocational Career EMS Lectures</option>
-                      <option value="Other Safety Inquiries">Other Emergency Preparedness Consultation</option>
+                      <option value="Other Emergency Inquiries">Other Emergency Preparedness Consultation</option>
                     </select>
                   </div>
 
@@ -482,7 +482,7 @@ export default function ContactForm() {
                       Enquiry Ingested Successfully!
                     </h3>
                     <p className="text-zinc-600 text-xs leading-relaxed">
-                      Thank you for contacting Lifeline Communi-Care (Pty) Ltd. Your formal safety guidelines and quote variables have been received.
+                      Thank you for contacting Lifeline Communi-Care (Pty) Ltd. Your formal emergency awareness guidelines and quote variables have been received.
                     </p>
                   </div>
 

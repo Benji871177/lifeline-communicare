@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, ShieldCheck, Heart, UserRoundCheck, Star } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Heart, UserRoundCheck, Star, Siren } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data';
 import { PageId } from '../types';
 
@@ -79,27 +79,27 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                   transition={{ duration: 0.7, delay: 0.65 }}
                   className="text-zinc-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
                 >
-                  We empower school academies, church ministries, local businesses, developmental youth programs, and private citizens across South Africa through accessible safety infoshare sessions, interactive lessons, and engaging safety reviews.
+                  We empower school academies, church ministries, local businesses, developmental youth programs, private citizens, and corporates across South Africa through accessible emergency awareness infoshare sessions, interactive lessons, and emergency awareness.
                 </motion.p>
               </div>
             </div>
 
-            {/* Special Callout: "NO MEDICAL BACKGROUND REQUIRED" */}
+            {/* Special Callout: "Critical Emergency Bulletin" */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-5 bg-brand-blue-light/80 border border-white/10 rounded-2xl shadow-xl flex items-start space-x-4 max-w-xl"
+              className="p-5 bg-brand-red border border-white/10 rounded-2xl shadow-xl shadow-brand-red/10 flex items-start space-x-4 max-w-xl"
             >
-              <div className="bg-brand-red/10 p-3 rounded-xl border border-brand-red/25 shrink-0">
-                <ShieldCheck className="w-6 h-6 text-brand-red" />
+              <div className="bg-white/15 p-3 rounded-xl border border-white/20 shrink-0">
+                <Siren className="w-6 h-6 text-white animate-pulse" />
               </div>
-              <div className="space-y-1">
-                <h4 className="text-white text-sm font-bold tracking-wide uppercase">
-                  No Medical Background Required
+              <div className="space-y-1.5 flex-1 text-left">
+                <h4 className="text-white text-xs font-mono font-extrabold tracking-widest uppercase">
+                  Critical Emergency Bulletin
                 </h4>
-                <p className="text-zinc-400 text-xs leading-relaxed">
-                  Anyone can learn. Everyone can help. We provide engaging safety presentations in friendly local settings where everyone learns step-by-step how to recognize emergency threats and preserve lives without requiring advanced equipment.
+                <p className="text-white text-sm font-medium leading-relaxed italic">
+                  “An emergency is a sudden, unexpected, and dangerous situation that poses an immediate threat to life or health.”
                 </p>
               </div>
             </motion.div>
@@ -125,7 +125,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                 onClick={() => onPageChange('contact')}
                 className="flex items-center justify-center space-x-2 bg-brand-blue-light hover:bg-brand-blue-snug/15 text-white font-medium px-7.5 py-4 rounded-xl border border-white/15 transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap cursor-pointer hover:bg-white/5"
               >
-                <span>Book Safety Workshop</span>
+                <span>Book Awareness Workshop</span>
               </button>
             </motion.div>
 
@@ -159,7 +159,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
               <div className="p-6 relative z-10 bg-brand-blue/95 border-t border-white/5 space-y-4">
                 <div className="space-y-1">
                   <h3 className="text-white text-base font-bold tracking-tight">
-                    Accessible, Equipment-Free Safety Sharing
+                    Accessible, Equipment-Free Emergency Guidance
                   </h3>
                   <p className="text-zinc-300 text-xs leading-relaxed">
                     Designed to inspire confidence in schools, churches, youth groups, and local businesses alike.
@@ -173,7 +173,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                   </div>
                   <div className="bg-white/5 p-2.5 rounded-xl border border-white/10 text-center">
                     <span className="block text-emerald-400 font-mono font-bold text-xs uppercase">Interactive</span>
-                    <span className="text-[10px] text-zinc-400">Engaging Safety Talks</span>
+                    <span className="text-[10px] text-zinc-400">Engaging Awareness Talks</span>
                   </div>
                 </div>
 

@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { School, Church, Users, Trophy, HeartHandshake, HelpCircle } from 'lucide-react';
+import { School, Church, Users, Trophy, HeartHandshake, HelpCircle, Building2 } from 'lucide-react';
 
 interface SectorItem {
   id: string;
@@ -35,7 +35,7 @@ const SECTOR_DATA: SectorItem[] = [
     icon: Users,
     title: 'Youth Centers & Academies',
     description: 'Safe recreational havens for children and teenagers.',
-    why: 'We inspire young minds to take an active role in civic care. Teaching basic first aid awareness instills a lifelong pillar of responsibility and safety-first leadership.'
+    why: 'We inspire young minds to take an active role in civic care. Teaching basic first aid awareness instills a lifelong pillar of responsibility and proactive emergency-ready leadership.'
   },
   {
     id: 'recreational-centers',
@@ -43,6 +43,13 @@ const SECTOR_DATA: SectorItem[] = [
     title: 'Sports Circles & Rec Centers',
     description: 'High-energy environments with frequent physical exercises.',
     why: 'Sports fields are hotbeds for sprains, fractures, or heat exhaustion. Equipping coaches, players, and coordinators with swift emergency response skills secures active communities.'
+  },
+  {
+    id: 'corporates-businesses',
+    icon: Building2,
+    title: 'Corporates & Businesses',
+    description: 'Professional office workspaces and commercial settings.',
+    why: 'Workplace emergencies require fast, organized team actions. Presenting interactive infoshare sessions for employees builds safe, stress-free environments and boosts emergency defense.'
   }
 ];
 
@@ -71,7 +78,7 @@ export default function CommunityImpactSection() {
               </h2>
               
               <p className="text-zinc-650 text-base leading-relaxed font-sans">
-                Emergency safety shouldn't be trapped behind daunting medical textbooks or strict clinical institutions. Lifeline Communi-Care exists to demystify protective response frameworks for local gathering spots where everyday citizens interact the most.
+                Emergency readiness shouldn't be trapped behind daunting medical textbooks or strict clinical institutions. Lifeline Communi-Care exists to demystify protective response frameworks for local gathering spots where everyday citizens interact the most.
               </p>
             </div>
 
@@ -79,14 +86,14 @@ export default function CommunityImpactSection() {
             <div className="relative rounded-3xl overflow-hidden shadow-md border border-zinc-200 group bg-white p-3">
               <img
                 src="https://i.postimg.cc/pTFhCn3s/images.jpg"
-                alt="Community members collaborating on safety and health discussions"
+                alt="Community members collaborating on emergency awareness and health discussions"
                 className="w-full h-auto object-contain rounded-2xl group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
               <div className="mt-3 p-3.5 bg-zinc-50 border border-zinc-150 rounded-xl text-left">
                 <span className="text-[10px] font-mono tracking-widest uppercase font-bold text-brand-red block mb-1">Active Grassroots Reach</span>
                 <p className="text-xs text-zinc-650 leading-relaxed font-sans">
-                  Bringing friendly, low-pressure safety awareness directly to dry halls, classrooms, meeting spaces, and community centers.
+                  Bringing friendly, low-pressure emergency awareness directly to local halls, classrooms, meeting spaces, and community centers.
                 </p>
               </div>
             </div>
@@ -105,7 +112,7 @@ export default function CommunityImpactSection() {
           {/* Right Sectors Grid Column */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="font-display font-extrabold text-xl text-zinc-900 tracking-tight text-left border-b border-zinc-100 pb-3">
-              Fostering Safety Where Life Actually Happens
+              Fostering Readiness Where Life Actually Happens
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
@@ -144,7 +151,7 @@ export default function CommunityImpactSection() {
             {/* Bottom summary encouragement note */}
             <div className="p-6 bg-zinc-90 w-full border border-dashed border-zinc-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
               <p className="text-xs text-zinc-500 max-w-md font-sans leading-relaxed">
-                Whether you guide a local neighborhood assembly, manage an after-school program, or handle a sanctuary board, we can curate the ideal safety talk for your team.
+                Whether you guide a local neighborhood assembly, manage an after-school program, or handle a sanctuary board, we can curate the ideal awareness talk for your team.
               </p>
               <a
                 href="#contact"

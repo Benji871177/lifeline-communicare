@@ -160,7 +160,7 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3 py-1 rounded-md text-[10px] font-mono text-brand-red font-bold uppercase">
               <ShieldAlert className="w-3.5 h-3.5" />
-              <span>South Africa Safety Awareness Support</span>
+              <span>South Africa Emergency Awareness Support</span>
             </div>
             
             <h3 className="font-display font-extrabold text-white text-lg tracking-tight">
