@@ -7,14 +7,39 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BriefcaseMedical, CheckCircle, PackageOpen, HelpCircle, ShieldAlert, BadgeInfo, PhoneCall, Check } from 'lucide-react';
 import { PRODUCTS_DATA, COMPANY_DETAILS } from '../data';
+import { PageId } from '../types';
 
-export default function SolutionsSection() {
+interface SolutionsSectionProps {
+  onPageChange?: (pageId: PageId) => void;
+}
+
+export default function SolutionsSection({ onPageChange }: SolutionsSectionProps) {
   const [filter, setFilter] = useState<'all' | 'kits' | 'consumables'>('all');
 
   const filteredProducts = PRODUCTS_DATA.filter((product) => {
     if (filter === 'all') return true;
     return product.category === filter;
   });
+
+  const handleInquire = (productName: string, category: string) => {
+    (window as any).__selectedProduct = { productName, category };
+
+    const event = new CustomEvent('request-supplies', {
+      detail: { productName, category }
+    });
+    window.dispatchEvent(event);
+
+    const cForm = document.getElementById('contact-form-anchor');
+    if (cForm) {
+      cForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        const nameInput = document.getElementById('fullName');
+        if (nameInput) nameInput.focus();
+      }, 800);
+    } else if (onPageChange) {
+      onPageChange('contact');
+    }
+  };
 
   return (
     <section id="solutions-section" className="py-20 bg-white">
@@ -116,18 +141,13 @@ export default function SolutionsSection() {
                     ))}
                   </div>
 
-                  <a
-                    href="#contact-form-hub"
-                    onClick={() => {
-                      const cForm = document.getElementById('contact-form-anchor');
-                      if (cForm) {
-                        cForm.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="w-full text-center py-2 bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-bold rounded-lg transition-colors duration-150 cursor-pointer text-left"
+                  <button
+                    type="button"
+                    onClick={() => handleInquire(product.name, product.category)}
+                    className="w-full text-center py-2 bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-bold rounded-lg transition-colors duration-150 cursor-pointer block"
                   >
                     Inquire About Supplies
-                  </a>
+                  </button>
                 </div>
 
               </motion.div>

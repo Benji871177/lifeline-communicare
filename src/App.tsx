@@ -170,7 +170,7 @@ export default function App() {
 
             {activePage === 'solutions' && (
               <div id="solutions-page-view">
-                <SolutionsSection />
+                <SolutionsSection onPageChange={handlePageChange} />
               </div>
             )}
 

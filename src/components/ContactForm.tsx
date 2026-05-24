@@ -24,6 +24,34 @@ export default function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   React.useEffect(() => {
+    // 1. Check window.__selectedProduct on mount (e.g. redirected from supplies page)
+    const storedProduct = (window as any).__selectedProduct;
+    if (storedProduct) {
+      const { productName, category } = storedProduct;
+      const targetSubject = category === 'kits' ? 'Supply & Maintenance of Kits' : 'Medical Consumables Procurement';
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        companyName: '',
+        subject: targetSubject,
+        message: `Hi Robbie, I would like to inquire about sourcing the following safety supply: "${productName}" for our community/school/workspace. Please get in touch with me so I can share details of what we require.`
+      });
+      
+      // Clear once processed
+      (window as any).__selectedProduct = null;
+      
+      // Move perspective to contact card and auto-focus
+      const element = document.getElementById('contact-form-anchor');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      setTimeout(() => {
+        const nameInput = document.getElementById('fullName');
+        if (nameInput) nameInput.focus();
+      }, 800);
+    }
+
     const handleRequestQuote = (event: Event) => {
       const customEvent = event as CustomEvent<{ serviceId: string; serviceTitle: string }>;
       if (!customEvent.detail) return;
@@ -58,8 +86,38 @@ export default function ContactForm() {
       }
     };
 
+    const handleRequestSupplies = (event: Event) => {
+      const customEvent = event as CustomEvent<{ productName: string; category: string }>;
+      if (!customEvent.detail) return;
+      const { productName, category } = customEvent.detail;
+      const targetSubject = category === 'kits' ? 'Supply & Maintenance of Kits' : 'Medical Consumables Procurement';
+      
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        companyName: '',
+        subject: targetSubject,
+        message: `Hi Robbie, I would like to inquire about sourcing the following safety supply: "${productName}" for our community/school/workspace. Please get in touch with me so I can share details of what we require.`
+      });
+
+      const element = document.getElementById('contact-form-anchor');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        setTimeout(() => {
+          const nameInput = document.getElementById('fullName');
+          if (nameInput) nameInput.focus();
+        }, 800);
+      }
+    };
+
     window.addEventListener('request-quote', handleRequestQuote);
-    return () => window.removeEventListener('request-quote', handleRequestQuote);
+    window.addEventListener('request-supplies', handleRequestSupplies);
+    return () => {
+      window.removeEventListener('request-quote', handleRequestQuote);
+      window.removeEventListener('request-supplies', handleRequestSupplies);
+    };
   }, []);
 
   const validate = (): boolean => {
