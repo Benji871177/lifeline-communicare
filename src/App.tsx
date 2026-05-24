@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ServicesList from './components/ServicesList';
+import StatCounter from './components/StatCounter';
 import SolutionsSection from './components/SolutionsSection';
 import EmergencyGuide from './components/EmergencyGuide';
 import ContactForm from './components/ContactForm';
@@ -48,6 +49,9 @@ export default function App() {
                 {/* Full Premium Hero Introduction */}
                 <HeroSection onPageChange={handlePageChange} />
                 
+                {/* Animated Experience Stat Counters */}
+                <StatCounter />
+
                 {/* Dynamic Inline Services Highlights */}
                 <ServicesList />
 

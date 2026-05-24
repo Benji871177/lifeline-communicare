@@ -37,8 +37,13 @@ export default function Footer({ onPageChange }: FooterProps) {
           {/* Brand Presentation & Taglines */}
           <div id="footer-branding-column" className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full border border-brand-red">
-                <Heart className="w-5 h-5 text-brand-red fill-brand-red/20 animate-pulse" />
+              <div className="flex items-center justify-center w-14 h-14 bg-white rounded-xl border border-brand-red overflow-hidden shadow-sm p-1">
+                <img
+                  src="https://i.postimg.cc/hvqPMQ0g/Whats-App-Image-2026-05-24-at-17-09-18.jpg"
+                  alt="Lifeline Communi-Care Logo"
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
               </div>
               <span className="font-display font-bold text-lg tracking-tight">
                 LIFELINE <span className="text-brand-red">COMMUNI-CARE</span>

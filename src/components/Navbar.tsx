@@ -42,9 +42,13 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => handleNavClick('home')}
           >
-            <div className="relative flex items-center justify-center w-11 h-11 bg-white rounded-full border-2 border-brand-red shadow-md transition-all duration-300 group-hover:scale-105">
-              <Heart className="w-6 h-6 text-brand-red fill-brand-red/10 transition-colors duration-300 group-hover:fill-brand-red/30" />
-              <Activity className="absolute inset-0 m-auto w-4.5 h-4.5 text-brand-blue" />
+            <div className="relative flex items-center justify-center w-14 h-14 bg-white rounded-xl border-2 border-brand-red shadow-md overflow-hidden transition-all duration-300 group-hover:scale-105 p-1">
+              <img
+                src="https://i.postimg.cc/hvqPMQ0g/Whats-App-Image-2026-05-24-at-17-09-18.jpg"
+                alt="Lifeline Communi-Care Logo"
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-white font-display font-bold tracking-tight text-lg leading-none flex items-center gap-1.5">
