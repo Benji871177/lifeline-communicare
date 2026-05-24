@@ -191,7 +191,7 @@ export default function ContactForm() {
               <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex items-center gap-3 mt-6">
                 <ShieldCheck className="w-8 h-8 text-brand-accent shrink-0" />
                 <p className="text-[10px] text-zinc-400 leading-normal text-left">
-                  <strong>South Africa Registered SME:</strong> Lifeline Communi-Care guarantees genuine medical components with accredited, compliant training.
+                  <strong>South Africa Registered SME:</strong> Lifeline Communi-Care guarantees genuine medical components with friendly, community-focused learning sessions.
                 </p>
               </div>
 
@@ -225,34 +225,34 @@ export default function ContactForm() {
                   />
                   
                   {/* Service Indicators (Pins) */}
-                  {/* Gauteng Hub (Pretoria/Joburg) */}
-                  <circle cx="260" cy="140" r="12" fill="rgba(211, 47, 47, 0.2)" className="animate-ping" />
-                  <circle cx="260" cy="140" r="4" fill="#D32F2F" />
+                  {/* Cape Town Headquarters */}
+                  <circle cx="70" cy="240" r="14" fill="rgba(211, 47, 47, 0.3)" className="animate-ping" />
+                  <circle cx="70" cy="240" r="5" fill="#D32F2F" />
                   
-                  {/* Cape Town Hub */}
-                  <circle cx="70" cy="240" r="10" fill="rgba(56, 189, 248, 0.2)" />
-                  <circle cx="70" cy="240" r="3" fill="#38BDF8" />
+                  {/* Gauteng Active Hub */}
+                  <circle cx="260" cy="140" r="10" fill="rgba(56, 189, 248, 0.2)" />
+                  <circle cx="260" cy="140" r="3.5" fill="#38BDF8" />
 
-                  {/* Durban Hub */}
+                  {/* Durban Active Hub */}
                   <circle cx="310" cy="190" r="10" fill="rgba(56, 189, 248, 0.2)" />
-                  <circle cx="310" cy="190" r="3" fill="#38BDF8" />
+                  <circle cx="310" cy="190" r="3.5" fill="#38BDF8" />
 
                   {/* Text pointers */}
-                  <text x="235" y="125" fill="#FFFFFF" fontSize="9" fontWeight="bold" fontFamily="sans-serif">Gauteng Hub</text>
-                  <text x="65" y="225" fill="#38BDF8" fontSize="8" fontFamily="sans-serif">Cape Town</text>
+                  <text x="50" y="222" fill="#FFFFFF" fontSize="9" fontWeight="bold" fontFamily="sans-serif">Cape Town HQ</text>
+                  <text x="235" y="125" fill="#38BDF8" fontSize="8" fontFamily="sans-serif">Gauteng Hub</text>
                   <text x="290" y="205" fill="#38BDF8" fontSize="8" fontFamily="sans-serif">Durban</text>
                   
                 </svg>
 
                 {/* Overlaid location info label */}
                 <div className="absolute bottom-2.5 left-2.5 right-2.5 bg-slate-950/80 backdrop-blur-md border border-white/5 py-1.5 px-3 rounded-lg text-[9px] font-mono text-zinc-300 flex items-center justify-between">
-                  <span>Johannesburg / Pretoria Headquarters</span>
-                  <span className="text-brand-red font-bold animate-pulse">&bull; LIVE AUDITING SQUADS</span>
+                  <span>Cape Town Main Headquarters</span>
+                  <span className="text-brand-red font-bold animate-pulse">&bull; ACTIVE METROPOLITAN TEAMS</span>
                 </div>
               </div>
               
-              <p className="text-zinc-600 text-[10px] leading-relaxed italic text-left">
-                * Our first aid squads, trainers, and logistics couriers travel directly to your facilities to carry out onsite regulatory training audits.
+              <p className="text-zinc-500 text-[10px] leading-relaxed italic text-left">
+                * Our friendly safety instructors and delivery team travel directly to your school, church, youth center, or business to host active informational safety sessions.
               </p>
             </div>
 
@@ -340,7 +340,7 @@ export default function ContactForm() {
                           type="text"
                           id="companyName"
                           name="companyName"
-                          placeholder="e.g. Pretoria Safety Ltd"
+                          placeholder="e.g. Cape Town Youth Alliance"
                           value={formData.companyName}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 bg-white border border-zinc-300 rounded-xl text-xs text-zinc-800 focus:outline-none focus:border-brand-blue"
@@ -360,7 +360,7 @@ export default function ContactForm() {
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-zinc-300 rounded-xl text-xs text-zinc-800 focus:outline-none focus:border-brand-blue cursor-pointer"
                     >
-                      <option value="First Aid Training Quote"> accredited Formal First Aid Training (Schools / Corporate)</option>
+                      <option value="First Aid Training Quote">Informational Community First Aid (Schools / Churches / Youth / Businesses)</option>
                       <option value="Supply & Maintenance of Kits">Source, supply, deliver &amp; maintain First Aid Kits</option>
                       <option value="Medical Consumables Procurement">Dentist, GP, or Clinic Consumables Procurement</option>
                       <option value="EMS Vocational Career Lectures">Life Orientation / Vocational Career EMS Lectures</option>

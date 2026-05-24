@@ -30,7 +30,7 @@ export default function AboutSection() {
           </h2>
           <div className="h-1 w-20 bg-brand-red mx-auto rounded-full" />
           <p className="text-zinc-600 text-base sm:text-lg leading-relaxed pt-2">
-            LIFELINE COMMUNI-CARE (PTY) LTD is a premier, South African-based medical emergency support, safety consultancy, and accredited training enterprise. We specialize in transforming passive environments into active safety-first zones.
+            LIFELINE COMMUNI-CARE (PTY) LTD is a premier, South African-based medical emergency support and friendly safety training group. We specialize in transforming passive environments into active safety-first zones.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function AboutSection() {
             </blockquote>
 
             <p className="text-zinc-600 text-sm leading-relaxed">
-              When trauma, shock, or respiratory distress strikes, every second dictates the barrier between injury recovery or unfortunate loss of life. That is why we are heavily invested in making compliance training, medical kits support, and medical-grade materials accessible without complex institutional backdrops.
+              When trauma, shock, or respiratory distress strikes, every second dictates the barrier between injury recovery or unfortunate loss of life. That is why we are heavily invested in making educational safety sharing, medical kits support, and medical-grade materials accessible without complex institutional backdrops.
             </p>
 
             <div className="space-y-3.5 pt-2">
@@ -96,11 +96,11 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center space-x-3 text-sm text-zinc-700">
                 <ShieldCheck className="w-5 h-5 text-brand-red shrink-0" />
-                <span><strong>Full regulatory oversight:</strong> All medical kits strictly meet workplace compliance laws.</span>
+                <span><strong>Fresh Sourced Materials:</strong> All medical kits are pre-stocked with sterile, safe, and up-to-date elements.</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-zinc-700">
                 <ShieldCheck className="w-5 h-5 text-brand-red shrink-0" />
-                <span><strong>Local Community Dedication:</strong> Specifically tailored for businesses, schools, and homes throughout South Africa.</span>
+                <span><strong>Local Community Dedication:</strong> Specifically tailored for school campuses, churches, youth groups, and homes throughout South Africa.</span>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function AboutSection() {
               <div className="absolute -right-16 -top-16 w-32 h-32 bg-white/5 rounded-full" />
               
               <h3 className="font-display font-extrabold text-xl tracking-tight text-white border-b border-white/10 pb-4">
-                Corporate Core Highlights
+                Community Core Highlights
               </h3>
 
               <div className="space-y-4">
@@ -125,7 +125,7 @@ export default function AboutSection() {
                 <div className="p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-brand-red/50 transition-all duration-300">
                   <span className="block text-xs font-mono text-brand-accent uppercase font-bold tracking-wider mb-1">Equipment Integrity</span>
                   <p className="text-zinc-300 text-xs text-left">
-                    We supply, source, deliver and maintain emergency-ready response equipment to guarantee non-stop corporate backup and medical compliance.
+                    We supply, source, deliver and maintain emergency-ready response equipment to guarantee non-stop backup and immediate readiness.
                   </p>
                 </div>
               </div>

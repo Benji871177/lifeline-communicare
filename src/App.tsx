@@ -19,6 +19,7 @@ import StatCounter from './components/StatCounter';
 import SolutionsSection from './components/SolutionsSection';
 import EmergencyGuide from './components/EmergencyGuide';
 import ContactForm from './components/ContactForm';
+import CommunityImpactSection from './components/CommunityImpactSection';
 
 export default function App() {
   const [activePage, setActivePage] = useState<PageId>('home');
@@ -51,9 +52,6 @@ export default function App() {
                 
                 {/* Animated Experience Stat Counters */}
                 <StatCounter />
-
-                {/* Dynamic Inline Services Highlights */}
-                <ServicesList />
 
                 {/* Compact Embedded Spliced Emergency Banner */}
                 <section id="fast-awareness-banner" className="bg-brand-red text-white py-14 overflow-hidden relative">
@@ -94,8 +92,11 @@ export default function App() {
                   </div>
                 </section>
 
-                {/* About and Values Presentation */}
-                <AboutSection />
+                {/* Focus and Reason: Community Targeted Audiences */}
+                <CommunityImpactSection />
+
+                {/* Dynamic Inline Services Highlights */}
+                <ServicesList />
 
                 {/* Sourcing Prompt Panel */}
                 <section className="bg-zinc-900 text-white py-16 relative">
@@ -103,13 +104,13 @@ export default function App() {
                     
                     <div className="space-y-3 max-w-2xl text-left">
                       <span className="text-xs font-mono font-bold text-brand-accent uppercase tracking-widest block">
-                        Procurement &amp; Auditing Logistics
+                        Sourcing &amp; Spliced Supply Support
                       </span>
                       <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                        Do your medical boxes comply with government safety criteria?
+                        Are your first aid stations and kit boxes fully prepared?
                       </h3>
                       <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                        We source, inspect, deliver, and maintain physical first aid cabinets. We offer comprehensive restoration cycles across Gauteng and broader South African regions.
+                        We source, pack, and deliver emergency kit sets. We offer friendly safety replenishments and informational guides across Gauteng and broader South African regions.
                       </p>
                     </div>
 

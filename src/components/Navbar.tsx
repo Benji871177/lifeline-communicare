@@ -50,14 +50,6 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="text-white font-display font-bold tracking-tight text-lg leading-none flex items-center gap-1.5">
-                LIFELINE <span className="text-brand-red font-extrabold">COMMUNI-CARE</span>
-              </span>
-              <span className="text-[10px] text-zinc-400 font-mono tracking-wider mt-1 text-left">
-                (PTY) LTD &bull; EST. 2026
-              </span>
-            </div>
           </div>
 
           {/* Desktop Navigation Link Groups */}

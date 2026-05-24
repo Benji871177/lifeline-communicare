@@ -77,8 +77,8 @@ export default function StatCounter() {
                 </span>
               </div>
             </div>
-            <p className="text-zinc-600 text-sm max-w-md mx-auto lg:mx-0 leading-relaxed">
-              With over three decades of professional emergency, clinical support, and classroom safety expertise, Robbie and the team offer trusted compliance programmes.
+            <p className="text-zinc-650 text-sm max-w-md mx-auto lg:mx-0 leading-relaxed">
+              With over three decades of professional emergency, clinical support, and classroom safety expertise, Robbie and the team deliver engaging educational sessions.
             </p>
           </div>
 
@@ -90,9 +90,9 @@ export default function StatCounter() {
                 <Award className="w-6 h-6" />
               </div>
               <div className="space-y-1 text-left">
-                <h4 className="font-display font-bold text-sm text-zinc-900">Accredited Pedagogy</h4>
+                <h4 className="font-display font-bold text-sm text-zinc-900">Community-Driven Sharing</h4>
                 <p className="text-zinc-500 text-xs leading-relaxed font-sans">
-                  Official safety criteria ensuring gold-standard corporate compliance and school readiness.
+                  Simple, equipment-free demonstrations designed for school readiness and civic confidence.
                 </p>
               </div>
             </div>
@@ -102,9 +102,9 @@ export default function StatCounter() {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div className="space-y-1 text-left">
-                <h4 className="font-display font-bold text-sm text-zinc-900">Government Compliant</h4>
+                <h4 className="font-display font-bold text-sm text-zinc-900">Essential Sourced Kits</h4>
                 <p className="text-zinc-500 text-xs leading-relaxed font-sans">
-                  Sourced first aid kits, cabinets, and clinical consumables strictly complying with South African health acts.
+                  Safely sourced first aid kits and clinical supplies tailored for churches, youth programs, and local businesses.
                 </p>
               </div>
             </div>
@@ -114,9 +114,9 @@ export default function StatCounter() {
                 <HeartHandshake className="w-6 h-6" />
               </div>
               <div className="space-y-1 text-left">
-                <h4 className="font-display font-bold text-sm text-zinc-900">Robbie's Personal Guidance</h4>
+                <h4 className="font-display font-bold text-sm text-zinc-900">Personalized Safety Talks</h4>
                 <p className="text-zinc-500 text-xs leading-relaxed font-sans">
-                  Custom schedules, direct site audits, and bespoke lectures led directly by a veteran medical professional.
+                  Custom interactive sessions and friendly lessons led directly by Robbie, a veteran medical professional.
                 </p>
               </div>
             </div>

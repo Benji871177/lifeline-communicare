@@ -23,14 +23,14 @@ export default function SolutionsSection() {
         {/* Header Title */}
         <div id="solutions-header" className="max-w-3xl mx-auto text-center mb-12 space-y-4">
           <span className="text-sm font-bold text-brand-red uppercase tracking-widest font-mono">
-            Logistical Infrastructure
+            Supplies &amp; Sourcing
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-brand-blue tracking-tight">
-            Compliance Kits &amp; Clinical Supplies
+            First Aid Kits &amp; Clinical Supplies
           </h2>
           <div className="h-1 w-20 bg-brand-red mx-auto rounded-full" />
           <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-            All medical products, consumables, and emergency units are sourced to meet strict regional safety standards. We offer regular maintenance plans where Robbie's logistics team physically inspects, restocks, and cleans cabinets.
+            All medical products, consumables, and emergency units are sourced to meet high quality standards. We offer custom delivery and replenishment plans to support your school, church, or organization.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function SolutionsSection() {
                       <div className="w-11 h-11 bg-brand-red/10 border border-brand-red/20 rounded-full flex items-center justify-center text-brand-red">
                         <BriefcaseMedical className="w-5.5 h-5.5" />
                       </div>
-                      <span className="text-[10px] uppercase font-mono tracking-widest text-brand-accent">Certified Sourcing Lot</span>
+                      <span className="text-[10px] uppercase font-mono tracking-widest text-brand-accent">Ready for Communities</span>
                     </div>
 
                     <span className="absolute bottom-3 right-3 text-[10px] font-mono uppercase bg-white/5 text-zinc-300 border border-white/10 px-2.5 py-1 rounded-md">
@@ -126,7 +126,7 @@ export default function SolutionsSection() {
                     }}
                     className="w-full text-center py-2 bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-bold rounded-lg transition-colors duration-150 cursor-pointer text-left"
                   >
-                    Request Sourcing Quote
+                    Inquire About Supplies
                   </a>
                 </div>
 
@@ -140,27 +140,27 @@ export default function SolutionsSection() {
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3 py-1 rounded-md text-[10px] font-mono text-brand-red font-bold uppercase">
               <ShieldAlert className="w-3.5 h-3.5" />
-              <span>South Africa Safety Regulatory Compliance</span>
+              <span>South Africa Safety Awareness Support</span>
             </div>
             
             <h3 className="font-display font-extrabold text-white text-lg tracking-tight">
-              Workplace Safety Regulation Compliance Audits
+              First Aid Kit Replenishment &amp; Support
             </h3>
             
-            <p className="text-zinc-600 text-xs leading-relaxed">
-              Did you know that keeping expired elements in a corporate First Aid box violates national safety criteria? We provide structured replacement auditing solutions. Robbie's team will physically visit your South African offices, catalog current stock, remove expired materials, and supply authenticated, sterile components.
+            <p className="text-zinc-400 text-xs leading-relaxed">
+              Did you know that keeping expired elements in educational or community First Aid boxes makes them unsafe to use? We provide friendly restocking suggestions and supply support. Robbie's team can supply clean, fresh materials to keep your kits up-to-date and ready for your school, church, or organization.
             </p>
           </div>
 
           <div className="shrink-0 space-y-3.5 w-full md:w-auto">
             <div className="p-4.5 bg-white border border-zinc-150 rounded-2xl shadow-sm text-center">
-              <span className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1">Direct Procurement</span>
+              <span className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1">Direct Queries</span>
               <a
                 href={`tel:${COMPANY_DETAILS.phonePrimary.replace(/\s+/g, '')}`}
                 className="inline-flex items-center space-x-2.5 text-brand-red hover:text-brand-red/85 font-mono text-xs font-extrabold"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
-                <span>Call Lead Officer: {COMPANY_DETAILS.phonePrimary}</span>
+                <span>Call Our Team: {COMPANY_DETAILS.phonePrimary}</span>
               </a>
             </div>
           </div>

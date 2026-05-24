@@ -45,13 +45,10 @@ export default function Footer({ onPageChange }: FooterProps) {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <span className="font-display font-bold text-lg tracking-tight">
-                LIFELINE <span className="text-brand-red">COMMUNI-CARE</span>
-              </span>
             </div>
             
             <p className="text-zinc-400 text-sm leading-relaxed max-w-sm">
-              We empower communities through strategic emergency awareness and compliance preparedness programmes. No medical background required.
+              We empower communities through strategic emergency awareness and friendly safety preparedness sessions. No medical background required.
             </p>
 
             <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3 py-1.5 rounded-lg text-xs font-mono text-brand-red font-semibold">
@@ -88,11 +85,11 @@ export default function Footer({ onPageChange }: FooterProps) {
             <ul className="space-y-2 text-xs text-zinc-400 leading-relaxed">
               <li className="flex items-start gap-1">
                 <span className="text-brand-red">&bull;</span>
-                <span>Formal Workplace First Aid Training Accreditations</span>
+                <span>Community &amp; Classroom Safety Infoshare Sessions</span>
               </li>
               <li className="flex items-start gap-1">
                 <span className="text-brand-red">&bull;</span>
-                <span>Replenishment &amp; Auditing of Regulatory Safety Cabinets</span>
+                <span>Sourcing &amp; Replenishment of First Aid Kit Stations</span>
               </li>
               <li className="flex items-start gap-1">
                 <span className="text-brand-red">&bull;</span>
@@ -155,7 +152,7 @@ export default function Footer({ onPageChange }: FooterProps) {
           <div className="text-center md:text-left space-y-1">
             <p>&copy; {currentYear} {COMPANY_DETAILS.name}. All Rights Reserved.</p>
             <p className="font-mono text-[10px] text-zinc-500">
-              Registration No: {COMPANY_DETAILS.registrationNum} &bull; South Africa Business Directory Compliance
+              Registration No: {COMPANY_DETAILS.registrationNum} &bull; Registered South African Business Listing
             </p>
           </div>
           

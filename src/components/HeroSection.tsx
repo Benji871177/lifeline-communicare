@@ -30,41 +30,58 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
           {/* Main Content Info Column */}
           <div id="hero-content-left" className="lg:col-span-7 space-y-8 text-left">
             
-            {/* Top Corporate Status Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider text-brand-red font-mono uppercase"
-            >
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
-              </span>
-              <span>Lifeline Communi-Care (Pty) Ltd</span>
-            </motion.div>
+            {/* Top Corporate Status Badge & Big Display Title */}
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-3"
+              >
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter uppercase leading-none select-none">
+                  <span className="text-white">LIFELINE</span>{' '}
+                  <span className="text-brand-red block sm:inline">COMMUNI-CARE</span>
+                </h1>
+              </motion.div>
 
-            {/* Dominant Headline */}
-            <div className="space-y-4">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.1]"
-              >
-                Be Aware. <br />
-                <span className="text-brand-red">Be Prepared.</span> <br />
-                Save Lives.
-              </motion.h1>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="text-zinc-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
-              >
-                We empower industries, healthcare clinics, school academies, and private citizens across South Africa through comprehensive emergency response blueprints, high-tier medical supply chains, and accredited training.
-              </motion.p>
+              {/* Elegantly Polished Slogan with sequential staggered entrance */}
+              <div className="flex flex-wrap items-center gap-x-3.5 gap-y-1.5 text-sm sm:text-base md:text-lg font-mono font-extrabold tracking-widest uppercase select-none pb-2">
+                <motion.span
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.35, delay: 0.15 }}
+                  className="text-white bg-white/5 border border-white/10 px-2.5 py-1 rounded-lg"
+                >
+                  Be Aware.
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.35, delay: 0.35 }}
+                  className="text-brand-red bg-brand-red/10 border border-brand-red/20 px-2.5 py-1 rounded-lg"
+                >
+                  Be Prepared.
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.35, delay: 0.55 }}
+                  className="text-white bg-brand-red px-2.5 py-1 rounded-lg shadow-sm shadow-brand-red/20"
+                >
+                  Save Lives.
+                </motion.span>
+              </div>
+
+              <div className="space-y-4">
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.65 }}
+                  className="text-zinc-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
+                >
+                  We empower school academies, church ministries, local businesses, developmental youth programs, and private citizens across South Africa through accessible safety infoshare sessions, interactive lessons, and engaging safety reviews.
+                </motion.p>
+              </div>
             </div>
 
             {/* Special Callout: "NO MEDICAL BACKGROUND REQUIRED" */}
@@ -82,7 +99,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                   No Medical Background Required
                 </h4>
                 <p className="text-zinc-400 text-xs leading-relaxed">
-                  Anyone can learn. Everyone can help. We provide real-world simulation courses where everyday citizens learn step-by-step to preserve lives during immediate trauma threats.
+                  Anyone can learn. Everyone can help. We provide engaging safety presentations in friendly local settings where everyone learns step-by-step how to recognize emergency threats and preserve lives without requiring advanced equipment.
                 </p>
               </div>
             </motion.div>
@@ -99,7 +116,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                 onClick={() => onPageChange('services')}
                 className="flex items-center justify-center space-x-2.5 bg-brand-red hover:bg-brand-red/90 text-white font-bold px-7.5 py-4 rounded-xl shadow-lg shadow-brand-red/30 transition-all duration-300 hover:shadow-brand-red/45 hover:-translate-y-0.5 cursor-pointer leading-none"
               >
-                <span>Explore Core Services</span>
+                <span>Explore Community Services</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
 
@@ -108,88 +125,66 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                 onClick={() => onPageChange('contact')}
                 className="flex items-center justify-center space-x-2 bg-brand-blue-light hover:bg-brand-blue-snug/15 text-white font-medium px-7.5 py-4 rounded-xl border border-white/15 transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap cursor-pointer hover:bg-white/5"
               >
-                <span>Request Custom Sourcing</span>
+                <span>Book Safety Workshop</span>
               </button>
             </motion.div>
 
           </div>
 
           {/* Right Layout Presentation Widget */}
-          <div id="hero-graphic-right" className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
+          <div id="hero-graphic-right" className="lg:col-span-5 relative flex flex-col items-center justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="w-full max-w-md relative bg-gradient-to-br from-brand-blue-light to-brand-blue/90 border border-white/10 p-8 rounded-3xl shadow-2xl overflow-hidden text-left"
+              className="w-full max-w-md bg-zinc-950/30 border border-white/10 rounded-3xl shadow-2xl overflow-hidden relative group"
             >
-              {/* Dynamic ECG Scan Graphic Ornament */}
-              <div className="absolute inset-0 opacity-15 ecg-glow select-none pointer-events-none">
-                <div className="w-full h-full border-t border-brand-red border-dashed top-1/2 absolute" />
-              </div>
-
-              {/* Card Title & Heart Indicator */}
-              <div className="flex items-center justify-between mb-8 pb-5 border-b border-white/10">
-                <div className="flex items-center space-x-3">
-                  <div className="w-9 h-9 rounded-xl bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red">
-                    <Heart className="w-4.5 h-4.5 fill-current animate-pulse" />
-                  </div>
-                  <div>
-                    <span className="block text-white font-bold text-sm">Emergency Readiness</span>
-                    <span className="text-[10px] uppercase font-mono tracking-wider text-brand-accent">S.A. Active Response</span>
-                  </div>
-                </div>
-                <span className="px-3 py-1 bg-white/5 rounded-full text-[10px] font-mono text-zinc-300 uppercase shrink-0">
-                  Ready Status
+              {/* Beautiful Community Infoshare Photo */}
+              <div className="relative h-64 sm:h-72 w-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/40 to-transparent z-10" />
+                <img
+                  src="https://i.postimg.cc/1zSpfBTn/community-cohesion.png"
+                  alt="Community Life-saving Coordination and Discussion"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
+                
+                {/* Floating pill for Infoshare audience */}
+                <span className="absolute top-4 left-4 z-20 bg-brand-red text-white font-mono text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md tracking-wider">
+                  Community Infoshare
                 </span>
               </div>
 
-              {/* Core Indicators */}
-              <div className="space-y-5.5 relative">
-                
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-7 h-7 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-brand-accent mt-0.5 shrink-0">
-                    <Star className="w-3.5 h-3.5 fill-current" />
+              {/* Informative text body overlay */}
+              <div className="p-6 relative z-10 bg-brand-blue/95 border-t border-white/5 space-y-4">
+                <div className="space-y-1">
+                  <h3 className="text-white text-base font-bold tracking-tight">
+                    Accessible, Equipment-Free Safety Sharing
+                  </h3>
+                  <p className="text-zinc-300 text-xs leading-relaxed">
+                    Designed to inspire confidence in schools, churches, youth groups, and local businesses alike.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 pt-1 border-t border-white/10">
+                  <div className="bg-white/5 p-2.5 rounded-xl border border-white/10 text-center">
+                    <span className="block text-brand-red font-mono font-bold text-xs uppercase">No Equipment</span>
+                    <span className="text-[10px] text-zinc-400">Pure Information Share</span>
                   </div>
-                  <div>
-                    <h5 className="text-white text-xs font-bold uppercase tracking-wide">Accredited First Aid Curriculum</h5>
-                    <p className="text-zinc-400 text-[11px] leading-relaxed">
-                      Syllabuses complying with corporate, regional health, and school safety criteria.
-                    </p>
+                  <div className="bg-white/5 p-2.5 rounded-xl border border-white/10 text-center">
+                    <span className="block text-emerald-400 font-mono font-bold text-xs uppercase">Interactive</span>
+                    <span className="text-[10px] text-zinc-400">Engaging Safety Talks</span>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-7 h-7 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-brand-accent mt-0.5 shrink-0">
-                    <UserRoundCheck className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <h5 className="text-white text-xs font-bold uppercase tracking-wide">Corporate Auditing &amp; Refills</h5>
-                    <p className="text-zinc-400 text-[11px] leading-relaxed">
-                      Full inspection oversight to swap out expired components and restock medicine boxes.
-                    </p>
-                  </div>
+                <div className="flex items-center justify-between text-[11px] text-zinc-400 font-mono pt-1">
+                  <span>Targeted Audiences:</span>
+                  <span className="text-white font-semibold flex items-center gap-1">
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+                    Churches, Schools &amp; Youth
+                  </span>
                 </div>
-
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-7 h-7 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-brand-red mt-0.5 shrink-0">
-                    <Heart className="w-3.5 h-3.5 fill-current" />
-                  </div>
-                  <div>
-                    <h5 className="text-white text-xs font-bold uppercase tracking-wide">Save Lives Guarantee</h5>
-                    <p className="text-zinc-400 text-[11px] leading-relaxed text-left">
-                      Equipping businesses and communities to deploy lifesaving compression cycles instantly.
-                    </p>
-                  </div>
-                </div>
-
               </div>
-
-              {/* Display metric ribbon representing reliability */}
-              <div className="relative mt-8 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400 font-mono">
-                <span>South Africa General Support:</span>
-                <span className="text-brand-red font-bold animate-pulse">&bull; 24/7 HELPDESK ACTIVE</span>
-              </div>
-              
             </motion.div>
           </div>
 

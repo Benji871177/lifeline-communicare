@@ -15,7 +15,7 @@ export const COMPANY_DETAILS = {
   emailPrimary: 'info@lifelinecommunicare.co.za',
   emailAlternate: 'lifelinecommunicare@gmail.com',
   website: 'www.lifelinecommunicare.co.za',
-  region: 'Serving our Communities, South Africa',
+  region: 'Cape Town & surrounding Western Cape communities, South Africa',
   quote: 'Committed to saving lives through knowledge and action.',
   noMedicalBackgroundText: 'NO MEDICAL BACKGROUND REQUIRED! Anyone can learn. Everyone can help. You can save a life.'
 };
@@ -30,7 +30,7 @@ export const CORE_PILLARS = [
   {
     id: 'preparedness',
     title: 'PREPAREDNESS',
-    description: 'Equipping environments with first response logistics, certified training, and compliant tools.',
+    description: 'Equipping environments with first response logistics, custom learning sessions, and ready-to-use tools.',
     icon: 'ShieldAlert'
   },
   {
@@ -51,28 +51,28 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'first-aid-training',
     numberLabel: '01',
-    title: 'Formal First Aid Training',
-    shortDescription: 'Certified and rigorous First Aid qualification courses designed for diverse educational and workplace sectors.',
-    fullDescription: 'Our Formal First Aid Training program introduces essential life-saving credentials tailored for individuals, corporate environments, schools, and medical settings. Meeting structural minimum requirements, this syllabus transforms raw theoretical science into responsive confidence.',
+    title: 'Informational Community First Aid',
+    shortDescription: 'Community-driven safety awareness courses tailored for schools, churches, local businesses, and youth programs. An accessible, equipment-free informational share.',
+    fullDescription: 'Our Informational Community First Aid programs provide crucial safety wisdom and intuitive guidance directly to local centers, youth programs, church groups, and businesses. We focus on an equipment-free, practical "infoshare" approach that removes barriers to entry, giving everyone the confidence to step up and preserve lives.',
     benefits: [
-      'Accredited curriculum aligned with medical protocols',
-      'Realistic scenario-based simulations and hands-on CPR practice',
-      'Flexible training programs (onsite workplace courses available)',
-      'Certified qualification credentials valid for corporate safety compliance'
+      'Tailored approach for schools, churches, local businesses, and youth networks',
+      'Accessible, pure informational sharing (infoshare) with no equipment required',
+      'Hands-on CPR instruction and responsive community safety orientation',
+      'Encourages civic readiness, helping everyday community members save lives'
     ],
     iconName: 'GraduationCap'
   },
   {
     id: 'kits-supply-maintenance',
     numberLabel: '02',
-    title: 'First Aid Kits: Supply & Maintenance',
-    shortDescription: 'End-to-end supply chain of premium, regulatory-compliant First Aid kits alongside structural status audits.',
-    fullDescription: 'We custom-source, assemble, deliver, and perform long-term maintenance inspections on first aid responder kits. Whether for regulatory workplace safety or specialized transport logistics, we guarantee that all items are sterile, functional, and fully stocked.',
+    title: 'First Aid Kits: Supply & Support',
+    shortDescription: 'Sourcing and delivery of first aid kits customized for schools, churches, and community spaces.',
+    fullDescription: 'We supply premium first aid responder kits tailored for local environments. We support schools, churches, and youth programs using a friendly, practical approach to ensure they have fully stocked, ready-to-use kits for basic safety and emergency guidance.',
     benefits: [
-      'Workplace regulation-compliant containment systems',
-      'Bespoke medical-focused customized assembly models',
-      'Scheduled inspection audits, replenishment cycles & expired-stock swaps',
-      'Sturdy, drop-tested protective and tactical carrying cases'
+      'Top-standard safety equipment designed for schools, churches, and local organizations',
+      'Customized kit assembly tailored directly to your community needs',
+      'Helpful routine replenishment assistance & expired-stock swaps',
+      'Promotes safe civic readiness and everyday group safety standards'
     ],
     iconName: 'BriefcaseMedical'
   },
@@ -85,7 +85,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     benefits: [
       'Surgical-grade equipment and hygienic disposables',
       'Comprehensive clinic restock bundles for diagnostics & sterile dressings',
-      'Direct-to-facility prompt shipping and supply auditing services',
+      'Direct-to-facility prompt shipping and support services',
       'Strict quality assurance verification protocols for every item batch'
     ],
     iconName: 'PackageCheck'
@@ -97,9 +97,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDescription: 'Immersive talks designed to introduce educational institutes to Emergency Medical Services pathways.',
     fullDescription: 'Our interactive Emergency Medical Services informational lectures serve as career-orientated guidance models for academic networks. We introduce the core components, career stages, structural demands, and immense rewards of the EMS world.',
     benefits: [
-      'Interactive lectures with real ambulance/first responder gear demonstrations',
+      'Interactive presentations with helpful lifesaving guidance demonstrations',
       'Clear vocational roadmap outlines for future paramedic or trauma specialists',
-      'Real-world emergency scenario case studies for schools and community centers',
+      'Real-world community safety case discussions for schools and community centers',
       'Engaging discussions on civic empathy, voluntary rescue corps, and community contribution'
     ],
     iconName: 'UsersRound'
@@ -110,31 +110,31 @@ export const PRODUCTS_DATA: ProductItem[] = [
   {
     id: 'pro-workplace-kit',
     category: 'kits',
-    name: 'Industrial Regulation First Aid Kit (Wall-Mounted & Mobile)',
-    description: 'Heavy-duty steel or durable ABS case containing comprehensive medical contents structured for medium-to-large business premises.',
+    name: 'Comprehensive Everyday First Aid Kit (Wall-Mounted & Mobile)',
+    description: 'Heavy-duty steel or durable ABS case containing comprehensive components designed for school halls, youth groups, and local gathering spots.',
     specifications: [
       'Includes triangular bandages, Gauze Swabs, CPR mouthpieces, and sterile dressings',
-      'Pre-labeled compartments with safety instructions inside',
-      'Fully compliant with regional occupational health and safety regulations',
-      'Features high-visibility retroreflective emergency signage'
+      'Pre-labeled compartments with friendly safety instructions inside',
+      'Fully stocked with clean, simple, easy-to-read safety guidelines',
+      'Features high-visibility retroreflective friendly signage'
     ],
     highlights: [
       'Weatherproof rubber seals',
       'Quick-release bracket included',
-      'Tamper-proof lock options'
+      'Easy-access latches'
     ],
     imageName: 'industrial_kit'
   },
   {
     id: 'tactical-trauma-bag',
     category: 'kits',
-    name: 'Advanced Combat & Trauma Responder Bag',
-    description: 'Designed specifically for emergency operations, sporting teams, site engineers, and rugged off-road environments.',
+    name: 'Advanced Outdoors & Active Responder Bag',
+    description: 'Designed specifically for active programs, sporting groups, youth camps, and rugged outdoor adventures.',
     specifications: [
       'Reinforced water-resistant tear-stop shell with comfort harness',
-      'Supplied with trauma shears, tourniquet clamps, eye washes, and space blankets',
-      'Individual quick-pull zip pouches for modular trauma sections',
-      'Padded layout structure for safe optical/oxygen equipment housing'
+      'Supplied with trauma shears, skin-prep supplies, eye washes, and space blankets',
+      'Individual quick-pull zip pouches for modular responder sections',
+      'Padded layout structure for safe and orderly gear storage'
     ],
     highlights: [
       'Heavy-duty physical handles',
@@ -146,17 +146,17 @@ export const PRODUCTS_DATA: ProductItem[] = [
   {
     id: 'sterile-consumables-pack',
     category: 'consumables',
-    name: 'Consumables Restock Bundle (Clinic & Workplace)',
-    description: 'Perfect for dental practices, doctors offices, and regular company cabinet replenishment supplies.',
+    name: 'Consumables Restock Bundle (Community & Workspace)',
+    description: 'Perfect for local classrooms, church halls, recreational centers, and friendly group safety support.',
     specifications: [
-      '100x Non-woven swabs & medical-grade tape rolls',
-      'Professional conforming bandages & skin-prep antiseptic wipes',
+      '100x Non-woven swabs & clean medical-grade tape rolls',
+      'Professional conforming bandages & skin-prep protective wipes',
       'Diverse adhesive plaster sets & sterile vinyl gloves sets',
-      'Disposable medical waste biohazard bags'
+      'Disposable medical waste safe bags'
     ],
     highlights: [
       'Individually sterile sealed',
-      'Hospital-grade certifications',
+      'Pure professional grade',
       'Eco-friendly packaging'
     ],
     imageName: 'consumables_pack'

@@ -34,7 +34,7 @@ export default function EmergencyGuide() {
           </div>
 
           <p className="text-zinc-600 text-sm leading-relaxed max-w-2xl mx-auto pt-3">
-            Our priority is to spread life-preserving knowledge throughout school classrooms and corporate office teams. Below is an interactive snapshot of three direct step-by-step responder workflows taught within our accredited courses.
+            Our priority is to spread life-preserving knowledge throughout school classrooms, local churches, and neighborhood teams. Below is an interactive snapshot of three direct step-by-step responder workflows taught within our community-driven safety sessions.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function EmergencyGuide() {
                 <span>Immediate Danger Note</span>
               </span>
               <p className="text-[11px] leading-relaxed text-zinc-700 text-left">
-                These summaries are for general civic awareness. Full certification, actual paramedic equipment handling logic, and formal certificates should encompass enrolling in our **Formal First Aid Training** series.
+                These summaries are for general civic awareness. For personalized safety presentations, interactive community infoshare workshops, and safety reviews within your home, school, church, or organization, feel free to schedule our community sessions.
               </p>
             </div>
           </div>
