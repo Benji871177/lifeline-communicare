@@ -79,7 +79,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                   transition={{ duration: 0.7, delay: 0.65 }}
                   className="text-zinc-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
                 >
-                  We empower school academies, church ministries, local businesses, developmental youth programs, private citizens, and corporates across South Africa through accessible emergency awareness infoshare sessions, interactive lessons, and emergency awareness.
+                  We empower school academies, church ministries, local businesses, developmental youth programs, private citizens, and corporates across South Africa through accessible emergency awareness infoshare sessions and interactive lessons.
                 </motion.p>
               </div>
             </div>
