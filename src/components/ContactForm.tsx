@@ -26,6 +26,7 @@ export default function ContactForm() {
   React.useEffect(() => {
     // 1. Check window.__selectedProduct on mount (e.g. redirected from supplies page)
     const storedProduct = (window as any).__selectedProduct;
+    const storedSponsorship = (window as any).__corporateSponsorship;
     if (storedProduct) {
       const { productName, category } = storedProduct;
       const targetSubject = category === 'kits' ? 'Supply & Maintenance of Kits' : 'Medical Consumables Procurement';
@@ -35,13 +36,33 @@ export default function ContactForm() {
         phoneNumber: '',
         companyName: '',
         subject: targetSubject,
-        message: `Hi Robbie, I would like to inquire about sourcing the following emergency supply: "${productName}" for our community/school/workspace. Please get in touch with me so I can share details of what we require.`
+        message: `Hi Robbie, I would like to inquire about sourcing the following emergency supply: "${productName}" for our organization/school/sports club/neighbourhood watch. Please get in touch with me so I can share details of what we require.`
       });
       
       // Clear once processed
       (window as any).__selectedProduct = null;
       
       // Move perspective to contact card and auto-focus
+      const element = document.getElementById('contact-form-anchor');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      setTimeout(() => {
+        const nameInput = document.getElementById('fullName');
+        if (nameInput) nameInput.focus();
+      }, 800);
+    } else if (storedSponsorship) {
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        companyName: '',
+        subject: 'Corporate Sponsorship & CSR',
+        message: `Hi Robbie, we would like to sponsor an Emergency Awareness session. Below are the details representing what we would like to sponsor:\n\n- Entity to sponsor (e.g., custom school name / sports club / specific beneficiary affiliate):\n- Approximate group size or audience details:\n- Branding requested at venue (custom pens, notebooks, banners, etc.):\n\nPlease get in touch with us so we can finalize the coordinates.`
+      });
+      
+      (window as any).__corporateSponsorship = null;
+      
       const element = document.getElementById('contact-form-anchor');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -98,7 +119,28 @@ export default function ContactForm() {
         phoneNumber: '',
         companyName: '',
         subject: targetSubject,
-        message: `Hi Robbie, I would like to inquire about sourcing the following emergency supply: "${productName}" for our community/school/workspace. Please get in touch with me so I can share details of what we require.`
+        message: `Hi Robbie, I would like to inquire about sourcing the following emergency supply: "${productName}" for our organization/school/sports club/neighbourhood watch. Please get in touch with me so I can share details of what we require.`
+      });
+
+      const element = document.getElementById('contact-form-anchor');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        setTimeout(() => {
+          const nameInput = document.getElementById('fullName');
+          if (nameInput) nameInput.focus();
+        }, 800);
+      }
+    };
+
+    const handleRequestSponsorship = (event: Event) => {
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        companyName: '',
+        subject: 'Corporate Sponsorship & CSR',
+        message: `Hi Robbie, we would like to sponsor an Emergency Awareness session. Below are the details representing what we would like to sponsor:\n\n- Entity to sponsor (e.g., custom school name / sports club / specific beneficiary affiliate):\n- Approximate group size or audience details:\n- Branding requested at venue (custom pens, notebooks, banners, etc.):\n\nPlease get in touch with us so we can finalize the coordinates.`
       });
 
       const element = document.getElementById('contact-form-anchor');
@@ -114,9 +156,11 @@ export default function ContactForm() {
 
     window.addEventListener('request-quote', handleRequestQuote);
     window.addEventListener('request-supplies', handleRequestSupplies);
+    window.addEventListener('request-sponsorship', handleRequestSponsorship);
     return () => {
       window.removeEventListener('request-quote', handleRequestQuote);
       window.removeEventListener('request-supplies', handleRequestSupplies);
+      window.removeEventListener('request-sponsorship', handleRequestSponsorship);
     };
   }, []);
 
@@ -198,7 +242,7 @@ export default function ContactForm() {
               <div className="space-y-6">
                 <div>
                   <span className="text-xs font-mono text-brand-accent uppercase font-bold tracking-wider">
-                    Direct Contact details
+                    Speak with Robbie &amp; his dynamic team directly
                   </span>
                   <h3 className="font-display font-extrabold text-2xl text-white tracking-tight mt-1 text-left">
                     Speak With Robbie Directly
@@ -226,9 +270,6 @@ export default function ContactForm() {
                       <span className="block text-[11px] font-mono text-zinc-400">Official inquiries email</span>
                       <a href={`mailto:${COMPANY_DETAILS.emailPrimary}`} className="font-mono text-white text-sm hover:text-brand-accent transition-colors block text-left truncate">
                         {COMPANY_DETAILS.emailPrimary}
-                      </a>
-                      <a href={`mailto:${COMPANY_DETAILS.emailAlternate}`} className="font-mono text-zinc-400 text-xs hover:text-brand-accent transition-colors block text-left truncate mt-0.5">
-                        {COMPANY_DETAILS.emailAlternate}
                       </a>
                     </div>
                   </div>
@@ -287,7 +328,7 @@ export default function ContactForm() {
                   <circle cx="70" cy="240" r="14" fill="rgba(211, 47, 47, 0.3)" className="animate-ping" />
                   <circle cx="70" cy="240" r="5" fill="#D32F2F" />
                   
-                  {/* Gauteng Active Hub */}
+                  {/* Broader South African Regions Hub */}
                   <circle cx="260" cy="140" r="10" fill="rgba(56, 189, 248, 0.2)" />
                   <circle cx="260" cy="140" r="3.5" fill="#38BDF8" />
 
@@ -297,20 +338,20 @@ export default function ContactForm() {
 
                   {/* Text pointers */}
                   <text x="50" y="222" fill="#FFFFFF" fontSize="9" fontWeight="bold" fontFamily="sans-serif">Cape Town HQ</text>
-                  <text x="235" y="125" fill="#38BDF8" fontSize="8" fontFamily="sans-serif">Gauteng Hub</text>
+                  <text x="200" y="125" fill="#38BDF8" fontSize="8" fontFamily="sans-serif">Broader SA Regions</text>
                   <text x="290" y="205" fill="#38BDF8" fontSize="8" fontFamily="sans-serif">Durban</text>
                   
                 </svg>
 
                 {/* Overlaid location info label */}
                 <div className="absolute bottom-2.5 left-2.5 right-2.5 bg-slate-950/80 backdrop-blur-md border border-white/5 py-1.5 px-3 rounded-lg text-[9px] font-mono text-zinc-300 flex items-center justify-between">
-                  <span>Cape Town Main Headquarters</span>
+                  <span>Cape Town HQ &amp; Broader SA Regions</span>
                   <span className="text-brand-red font-bold animate-pulse">&bull; ACTIVE METROPOLITAN TEAMS</span>
                 </div>
               </div>
               
               <p className="text-zinc-500 text-[10px] leading-relaxed italic text-left">
-                * Our friendly emergency awareness instructors and delivery team travel directly to your school, church, youth center, or business to host active informational safety sessions.
+                * Our friendly emergency awareness instructors and delivery team travel directly to your school, sports club, neighbourhood watch, church, or community center to host active informational safety sessions.
               </p>
             </div>
 
@@ -333,9 +374,22 @@ export default function ContactForm() {
                     <h3 className="font-display font-bold text-lg text-brand-blue tracking-tight mb-2 text-left">
                       Client Support Dispatch Request
                     </h3>
-                    <p className="text-zinc-500 text-xs text-left mb-6">
+                    <p className="text-zinc-500 text-xs text-left mb-5">
                       Fill out the details below. Our corporate desk guarantees a response timeline within 24 operational hours.
                     </p>
+                  </div>
+
+                  {/* Mandated Inquiry Redirect Callout */}
+                  <div className="bg-brand-red/5 border border-brand-red/20 rounded-2xl p-4 flex items-start gap-3 mb-5 text-left">
+                    <div className="bg-brand-red text-white p-1.5 rounded-lg shrink-0 mt-0.5">
+                      <Mail className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-mono font-bold text-brand-red uppercase tracking-wider block">Important Service Note</span>
+                      <p className="text-zinc-700 text-[11px] leading-relaxed">
+                        In compliance with our national communication policy, all official inquiries, custom quote requests, and corporate sponsors must direct their correspondence to our primary inbox: <a href="mailto:info@lifelinecommunicare.co.za" className="font-mono font-extrabold text-[#D32F2F] hover:underline underline-offset-2">info@lifelinecommunicare.co.za</a>.
+                      </p>
+                    </div>
                   </div>
 
                   {/* Two-row grid: name & email */}
@@ -418,7 +472,8 @@ export default function ContactForm() {
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-zinc-300 rounded-xl text-xs text-zinc-800 focus:outline-none focus:border-brand-blue cursor-pointer"
                     >
-                      <option value="First Aid Training Quote">Informational Community First Aid (Schools / Churches / Youth / Businesses)</option>
+                      <option value="First Aid Training Quote">Informational Community First Aid &amp; Certified Level 1-3 Training (T&amp;Cs apply)</option>
+                      <option value="Corporate Sponsorship &amp; CSR">Corporate Sponsorship &amp; CSR (Schools, Clubs &amp; Affiliates)</option>
                       <option value="Supply & Maintenance of Kits">Source, supply, deliver &amp; maintain First Aid Kits</option>
                       <option value="Medical Consumables Procurement">Dentist, GP, or Clinic Consumables Procurement</option>
                       <option value="EMS Vocational Career Lectures">Life Orientation / Vocational Career EMS Lectures</option>

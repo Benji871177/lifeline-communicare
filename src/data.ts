@@ -13,7 +13,6 @@ export const COMPANY_DETAILS = {
   phonePrimary: '074 841 0771',
   phoneAlternate: '062 959 0426',
   emailPrimary: 'info@lifelinecommunicare.co.za',
-  emailAlternate: 'lifelinecommunicare@gmail.com',
   website: 'www.lifelinecommunicare.co.za',
   region: 'Cape Town & surrounding Western Cape communities, South Africa',
   quote: 'Committed to saving lives through knowledge and action.',
@@ -51,11 +50,12 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'first-aid-training',
     numberLabel: '01',
-    title: 'Informational Community First Aid',
-    shortDescription: 'Community-driven emergency awareness courses tailored for schools, churches, local businesses, and youth programs. An accessible, equipment-free informational share.',
-    fullDescription: 'Our Informational Community First Aid programs provide crucial emergency wisdom and intuitive guidance directly to local centers, youth programs, church groups, and businesses. We focus on an equipment-free, practical "infoshare" approach that removes barriers to entry, giving everyone the confidence to step up and preserve lives.',
+    title: 'Informational Community First Aid & Certified Level 1-3 Training',
+    shortDescription: 'Community-driven emergency awareness plus formal certified Level 1 to 3 First Aid Training courses (T&Cs apply) tailored for schools, sports, watches, and community groups.',
+    fullDescription: 'Our Informational Community First Aid and certified programs provide crucial emergency wisdom and intuitive guidance directly to local centers, youth programs, church groups, and businesses. Along with our accessible, equipment-free informational sessions, we offer formal certified Level 1 to 3 First Aid Training courses (T&Cs apply) to equip your team with formal responder credentials.',
     benefits: [
-      'Tailored approach for schools, churches, local businesses, and youth networks',
+      'Formal certified Level 1 to 3 First Aid Training courses (T&Cs apply)',
+      'Tailored approach for schools, sports clubs, neighbourhood watches, and congregations',
       'Accessible, pure informational sharing (infoshare) with no equipment required',
       'Hands-on CPR instruction and responsive community emergency orientation',
       'Encourages civic readiness, helping everyday community members save lives'
@@ -79,11 +79,11 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'medical-consumables',
     numberLabel: '03',
-    title: 'Medical Consumables & Equipment Supply',
-    shortDescription: 'Industrial sourcing and prompt delivery of sterile general medical consumables for clinical environments.',
+    title: 'Medical Consumables Supply',
+    shortDescription: 'Reliable sourcing and prompt delivery of sterile general medical consumables for clinical environments.',
     fullDescription: 'We design complete supply lines for clinical, diagnostic, and private medical communities including General Practitioners (GPs), Dental Clinics, Family Healthcare centers, and corporate medical rooms.',
     benefits: [
-      'Surgical-grade equipment and hygienic disposables',
+      'Hygienic general disposables and clinical consumables',
       'Comprehensive clinic restock bundles for diagnostics & sterile dressings',
       'Direct-to-facility prompt shipping and support services',
       'Strict quality assurance verification protocols for every item batch'
@@ -98,7 +98,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Our interactive Emergency Medical Services informational lectures serve as career-orientated guidance models for academic networks. We introduce the core components, career stages, structural demands, and immense rewards of the EMS world.',
     benefits: [
       'Interactive presentations with helpful lifesaving guidance demonstrations',
-      'Clear vocational roadmap outlines for future paramedic or trauma specialists',
+      'Clear vocational roadmap outlines for future paramedic or medical rescue paths',
       'Real-world community emergency case discussions for schools and community centers',
       'Engaging discussions on civic empathy, voluntary rescue corps, and community contribution'
     ],
@@ -110,55 +110,40 @@ export const PRODUCTS_DATA: ProductItem[] = [
   {
     id: 'pro-workplace-kit',
     category: 'kits',
-    name: 'Comprehensive Everyday First Aid Kit (Wall-Mounted & Mobile)',
-    description: 'Heavy-duty steel or durable ABS case containing comprehensive components designed for school halls, youth groups, and local gathering spots.',
+    name: 'Standard Community First Aid Kit',
+    description: 'A clean, compact kit with essential supplies, perfect for school classrooms, church halls, and small community groups.',
     specifications: [
-      'Includes triangular bandages, Gauze Swabs, CPR mouthpieces, and sterile dressings',
-      'Pre-labeled compartments with friendly emergency instructions inside',
-      'Fully stocked with clean, simple, easy-to-read emergency guidelines',
-      'Features high-visibility retroreflective friendly signage'
+      'Basic triangular bandages, gauze pads, and sterile dressings',
+      'Simple, easy-to-read emergency instructions card',
+      'Compact, lightweight case that stands out clearly'
     ],
-    highlights: [
-      'Weatherproof rubber seals',
-      'Quick-release bracket included',
-      'Easy-access latches'
-    ],
+    highlights: [],
     imageName: 'industrial_kit'
   },
   {
     id: 'tactical-trauma-bag',
     category: 'kits',
-    name: 'Advanced Outdoors & Active Responder Bag',
-    description: 'Designed specifically for active programs, sporting groups, youth camps, and rugged outdoor adventures.',
+    name: 'Grab-and-Go Emergency Bag',
+    description: 'A travel-friendly, lightweight emergency bag with a shoulder strap. Designed to be grabbed instantly for any minor classroom, outdoor, or community incident.',
     specifications: [
-      'Reinforced water-resistant tear-stop shell with comfort harness',
-      'Supplied with trauma shears, skin-prep supplies, eye washes, and space blankets',
-      'Individual quick-pull zip pouches for modular responder sections',
-      'Padded layout structure for safe and orderly gear storage'
+      'Essential conforming bandages, trauma shears, and plasters',
+      'Compact water-resistant soft shell with comfortable handles',
+      'Transparent inside pouches for quick identification of items'
     ],
-    highlights: [
-      'Heavy-duty physical handles',
-      'Modular webbing arrays',
-      'Waterproof internal liners'
-    ],
+    highlights: [],
     imageName: 'trauma_bag'
   },
   {
     id: 'sterile-consumables-pack',
     category: 'consumables',
-    name: 'Consumables Restock Bundle (Community & Workspace)',
-    description: 'Perfect for local classrooms, church halls, recreational centers, and friendly group emergency support.',
+    name: 'Clinical Restock & Practitioner Pack',
+    description: 'Sourced specifically to meet the high-standard requirements of doctors, nurses, and general medical practices. Premium sterile supplies perfect for restocking diagnostic clinics and nursing bag essentials.',
     specifications: [
-      '100x Non-woven swabs & clean medical-grade tape rolls',
-      'Professional conforming bandages & skin-prep protective wipes',
-      'Diverse adhesive plaster sets & sterile vinyl gloves sets',
-      'Disposable medical waste safe bags'
+      'Premium individually wrapped sterile gauze swabs & clinical-grade adhesive tapes',
+      'High-grade conforming bandages, skin-prep antiseptic wipes, and wound dressings',
+      'Excellent quality hypoallergenic materials and comfortable examination gloves'
     ],
-    highlights: [
-      'Individually sterile sealed',
-      'Pure professional grade',
-      'Eco-friendly packaging'
-    ],
+    highlights: [],
     imageName: 'consumables_pack'
   }
 ];

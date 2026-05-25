@@ -38,9 +38,9 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                 transition={{ duration: 0.6 }}
                 className="space-y-3"
               >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter uppercase leading-none select-none">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tighter uppercase leading-none select-none">
                   <span className="text-white">LIFELINE</span>{' '}
-                  <span className="text-brand-red block sm:inline">COMMUNI-CARE</span>
+                  <span className="text-brand-red block sm:inline">COMMUNI-CARE <span className="text-zinc-400 text-lg sm:text-2xl md:text-3xl lg:text-4xl font-sans tracking-normal font-medium capitalize select-none align-middle ml-1.5 sm:ml-2">Pty Ltd</span></span>
                 </h1>
               </motion.div>
 
@@ -79,7 +79,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                   transition={{ duration: 0.7, delay: 0.65 }}
                   className="text-zinc-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
                 >
-                  We empower school academies, church ministries, local businesses, developmental youth programs, private citizens, and corporates across South Africa through accessible emergency awareness infoshare sessions and interactive lessons.
+                  We empower schools, sporting bodies, neighbourhood watches, church ministries, youth programs, and community groups across South Africa through accessible emergency awareness infoshare sessions and interactive lessons.
                 </motion.p>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                     Accessible, Equipment-Free Emergency Guidance
                   </h3>
                   <p className="text-zinc-300 text-xs leading-relaxed">
-                    Designed to inspire confidence in schools, churches, youth groups, and local businesses alike.
+                    Designed to inspire confidence in schools, sporting bodies, neighbourhood watches, and community groups alike.
                   </p>
                 </div>
 
@@ -181,7 +181,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                   <span>Targeted Audiences:</span>
                   <span className="text-white font-semibold flex items-center gap-1">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-                    Churches, Schools &amp; Youth
+                    Schools, Sports &amp; Watches
                   </span>
                 </div>
               </div>

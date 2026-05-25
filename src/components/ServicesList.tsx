@@ -59,7 +59,7 @@ export default function ServicesList() {
           </h2>
           <div className="h-1 w-20 bg-brand-red mx-auto rounded-full" />
           <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-            Directly sourced and managed by Lead Representative Robbie. Every capability complies with corporate, school, and clinical guidelines across South Africa. Click on any card below to focus full details and benefits.
+            Directly sourced and managed by Lead Representative Robbie. Every capability complies with community, school, sports, and clinical guidelines across South Africa. Click on any card below to focus full details and benefits.
           </p>
         </div>
 

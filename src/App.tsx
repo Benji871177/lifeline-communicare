@@ -17,9 +17,9 @@ import AboutSection from './components/AboutSection';
 import ServicesList from './components/ServicesList';
 import StatCounter from './components/StatCounter';
 import SolutionsSection from './components/SolutionsSection';
-import EmergencyGuide from './components/EmergencyGuide';
 import ContactForm from './components/ContactForm';
 import CommunityImpactSection from './components/CommunityImpactSection';
+import CorporateSponsorshipSection from './components/CorporateSponsorshipSection';
 
 export default function App() {
   const [activePage, setActivePage] = useState<PageId>('home');
@@ -71,7 +71,7 @@ export default function App() {
                         Are your first aid stations and kit boxes fully prepared?
                       </h3>
                       <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                        We source, pack, and deliver emergency kit sets. We offer friendly emergency replenishments and informational guides across Gauteng and broader South African regions.
+                        We source, pack, and deliver emergency kit sets. We offer friendly emergency replenishments and informational guides nationwide (T&C Apply) across South Africa.
                       </p>
                     </div>
 
@@ -112,7 +112,7 @@ export default function App() {
                       South African Civic Dedication
                     </h3>
                     <p className="text-zinc-600 text-sm leading-relaxed">
-                      Founded by Lead Coordinator Robbie, Lifeline Communi-Care (Pty) Ltd operates with the single baseline aspiration of elevating first-responder efficiency across the general population. We work actively with schools, engineering centers, private health practices, and companies to coordinate emergency preparedness programs.
+                      Founded by Lead Coordinator Robbie, Lifeline Communi-Care (Pty) Ltd operates with the single baseline aspiration of elevating first-responder efficiency across the general population. We work actively with schools, sporting bodies, neighbourhood watches, and community clinics to coordinate emergency preparedness programs.
                     </p>
                     
                     <div className="pt-2 text-center">
@@ -135,9 +135,9 @@ export default function App() {
               </div>
             )}
 
-            {activePage === 'emergency-prep' && (
-              <div id="prep-page-view">
-                <EmergencyGuide />
+            {activePage === 'sponsorship' && (
+              <div id="sponsorship-page-view">
+                <CorporateSponsorshipSection onPageChange={handlePageChange} />
               </div>
             )}
 

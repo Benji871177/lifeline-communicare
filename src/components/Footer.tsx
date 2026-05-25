@@ -20,7 +20,7 @@ export default function Footer({ onPageChange }: FooterProps) {
     { id: 'about', label: 'About Our Vision' },
     { id: 'services', label: 'Our Services' },
     { id: 'solutions', label: 'Supplies & Kits' },
-    { id: 'emergency-prep', label: 'Emergency Guides' },
+    { id: 'sponsorship', label: 'Corporate Sponsorship' },
     { id: 'contact', label: 'Contact Helpdesk' },
   ] as const;
 
@@ -37,11 +37,11 @@ export default function Footer({ onPageChange }: FooterProps) {
           {/* Brand Presentation & Taglines */}
           <div id="footer-branding-column" className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-2xl border border-brand-red overflow-hidden shadow-md p-1.5">
+              <div className="flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 bg-white rounded-2xl border-2 border-brand-red overflow-hidden shadow-xl p-1.5 transition-all duration-300">
                 <img
                   src="https://i.postimg.cc/hvqPMQ0g/Whats-App-Image-2026-05-24-at-17-09-18.jpg"
                   alt="Lifeline Communi-Care Logo"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain scale-[1.35] bg-white mix-blend-multiply brightness-[1.5] contrast-[1.7] saturate-[1.45] transition-all duration-300"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -104,8 +104,8 @@ export default function Footer({ onPageChange }: FooterProps) {
 
           {/* Core Contacts Robbie Info */}
           <div id="footer-contacts-column" className="space-y-4">
-            <h3 className="font-display text-sm font-semibold tracking-wider text-zinc-300 uppercase">
-              Direct Contact
+            <h3 className="font-display text-sm font-semibold tracking-wider text-zinc-300">
+              Speak with Robbie &amp; his dynamic team directly
             </h3>
             <p className="text-xs text-zinc-400 font-mono italic">
               Speak directly with Lead Officer Robbie:
@@ -129,9 +129,6 @@ export default function Footer({ onPageChange }: FooterProps) {
                 <div className="flex flex-col min-w-0">
                   <a href={`mailto:${COMPANY_DETAILS.emailPrimary}`} className="hover:text-white transition-colors duration-150 font-mono text-xs truncate">
                     {COMPANY_DETAILS.emailPrimary}
-                  </a>
-                  <a href={`mailto:${COMPANY_DETAILS.emailAlternate}`} className="hover:text-white transition-colors duration-150 font-mono text-[11px] text-zinc-400 truncate">
-                    {COMPANY_DETAILS.emailAlternate}
                   </a>
                 </div>
               </div>

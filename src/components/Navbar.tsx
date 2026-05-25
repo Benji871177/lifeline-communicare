@@ -21,7 +21,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
     { id: 'about', label: 'About Us' },
     { id: 'services', label: 'Our Services' },
     { id: 'solutions', label: 'Supplies & Solutions' },
-    { id: 'emergency-prep', label: 'Emergency Prep' },
+    { id: 'sponsorship', label: 'Sponsorship' },
     { id: 'contact', label: 'Contact' },
   ] as const;
 
@@ -42,11 +42,11 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => handleNavClick('home')}
           >
-            <div className="relative flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-2xl border-2 border-brand-red shadow-xl overflow-hidden transition-all duration-300 group-hover:scale-105 p-1.5">
+            <div className="relative flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 bg-white rounded-2xl border-2 border-brand-red shadow-xl overflow-hidden transition-all duration-300 group-hover:scale-105 p-1.5">
               <img
                 src="https://i.postimg.cc/hvqPMQ0g/Whats-App-Image-2026-05-24-at-17-09-18.jpg"
                 alt="Lifeline Communi-Care Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain scale-[1.35] bg-white mix-blend-multiply brightness-[1.5] contrast-[1.7] saturate-[1.45] transition-all duration-300"
                 referrerPolicy="no-referrer"
               />
             </div>

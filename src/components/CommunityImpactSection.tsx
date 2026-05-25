@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { School, Church, Users, Trophy, HeartHandshake, HelpCircle, Building2 } from 'lucide-react';
+import { School, Church, Users, Trophy, HeartHandshake, HelpCircle, Shield } from 'lucide-react';
 
 interface SectorItem {
   id: string;
@@ -17,39 +17,39 @@ interface SectorItem {
 
 const SECTOR_DATA: SectorItem[] = [
   {
-    id: 'school-academies',
+    id: 'schools',
     icon: School,
     title: 'Schools & Crèches',
     description: 'Bustling classrooms, athletic fields, and playgrounds.',
-    why: 'Young children are naturally adventurous and prone to sudden injuries. Our sessions empower educators and students with confidence to handle falls, choking, and minor trauma without panic.'
+    why: 'Young children are active and adventurous. Our awareness talks empower teachers, caretakers, and assistants with the basic readiness to handle minor injuries, choking, or play-area falls calmly.'
+  },
+  {
+    id: 'sporting-bodies',
+    icon: Trophy,
+    title: 'Sporting Bodies & Clubs',
+    description: 'Active leagues, sports fields, and recreational clubs.',
+    why: 'Athletic fields are hotbeds for minor sprains, physical impact, fractures, or heat exhaustion. Equipping coaches, referees, and team coordinators with basic emergency awareness keeps sporting groups safe.'
+  },
+  {
+    id: 'neighbourhood-watches',
+    icon: Shield,
+    title: 'Neighbourhood Watches',
+    description: 'Community patrols, CPF groups, and local block watches.',
+    why: 'Patrollers and community watches are often the first on the scene during active neighborhood distress. Basic, equipment-free emergency awareness helps you provide critical support when minutes count.'
   },
   {
     id: 'churches-ministries',
     icon: Church,
     title: 'Churches & Worship Spaces',
-    description: 'Multi-generational spiritual gatherings and community events.',
-    why: 'Congregations gather hundreds of young and elderly citizens alike. Preparing ushers and volunteers to spot heat stroke, exhaustion, or cardiac warning signs protects families when minutes matter.'
+    description: 'Multi-generational gatherings and congregational spaces.',
+    why: 'Congregations gather hundreds of young and elderly citizens alike. Preparing welcome helpers, volunteers, and ushers to handle hot weather, fainting, or sudden distress preserves families.'
   },
   {
-    id: 'youth-centers',
+    id: 'youth-groups',
     icon: Users,
-    title: 'Youth Centers & Academies',
-    description: 'Safe recreational havens for children and teenagers.',
-    why: 'We inspire young minds to take an active role in civic care. Teaching basic first aid awareness instills a lifelong pillar of responsibility and proactive emergency-ready leadership.'
-  },
-  {
-    id: 'recreational-centers',
-    icon: Trophy,
-    title: 'Sports Circles & Rec Centers',
-    description: 'High-energy environments with frequent physical exercises.',
-    why: 'Sports fields are hotbeds for sprains, fractures, or heat exhaustion. Equipping coaches, players, and coordinators with swift emergency response skills secures active communities.'
-  },
-  {
-    id: 'corporates-businesses',
-    icon: Building2,
-    title: 'Corporates & Businesses',
-    description: 'Professional office workspaces and commercial settings.',
-    why: 'Workplace emergencies require fast, organized team actions. Presenting interactive infoshare sessions for employees builds safe, stress-free environments and boosts emergency defense.'
+    title: 'Youth Groups & Programs',
+    description: 'Extra-curricular programs, community bands, and scouts.',
+    why: 'We inspire young minds to take an active, helpful role in community care. Simple interactive sessions raise confidence, safety awareness, and responsible peer-to-peer response habits.'
   }
 ];
 
@@ -87,11 +87,11 @@ export default function CommunityImpactSection() {
               <img
                 src="https://i.postimg.cc/pTFhCn3s/images.jpg"
                 alt="Community members collaborating on emergency awareness and health discussions"
-                className="w-full h-auto object-contain rounded-2xl group-hover:scale-[1.01] transition-transform duration-500"
+                className="w-full h-auto object-contain rounded-2xl group-hover:scale-[1.01] transition-transform duration-500 bg-white mix-blend-multiply brightness-[1.2] contrast-[1.35] saturate-[1.1]"
                 referrerPolicy="no-referrer"
               />
               <div className="mt-3 p-3.5 bg-zinc-50 border border-zinc-150 rounded-xl text-left">
-                <span className="text-[10px] font-mono tracking-widest uppercase font-bold text-brand-red block mb-1">Active Grassroots Reach</span>
+                <span className="text-xs sm:text-sm font-sans tracking-wide uppercase font-black text-brand-red block mb-1.5">Active Grassroots Reach</span>
                 <p className="text-xs text-zinc-650 leading-relaxed font-sans">
                   Bringing friendly, low-pressure emergency awareness directly to local halls, classrooms, meeting spaces, and community centers.
                 </p>
@@ -101,7 +101,7 @@ export default function CommunityImpactSection() {
             <div className="bg-brand-blue-light/10 border border-brand-blue-light/25 p-5.5 rounded-2xl flex items-start gap-4">
               <HelpCircle className="w-6 h-6 text-brand-red shrink-0 mt-0.5" />
               <div className="space-y-1.5">
-                <h4 className="font-display font-semibold text-sm text-brand-blue">No Medical Background Needed?</h4>
+                <h4 className="font-display font-black text-sm sm:text-base text-brand-blue uppercase tracking-wide">No Medical Background Needed?</h4>
                 <p className="text-zinc-650 text-xs leading-relaxed font-sans">
                   Absolutely none! All our interactive community sessions are customized so that any grandmother, pupil, coach, or teacher can absorb the core elements immediately.
                 </p>
@@ -151,7 +151,7 @@ export default function CommunityImpactSection() {
             {/* Bottom summary encouragement note */}
             <div className="p-6 bg-zinc-90 w-full border border-dashed border-zinc-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
               <p className="text-xs text-zinc-500 max-w-md font-sans leading-relaxed">
-                Whether you guide a local neighborhood assembly, manage an after-school program, or handle a sanctuary board, we can curate the ideal awareness talk for your team.
+                Whether you lead a neighbourhood watch, manage a sports team, support a school, or coordinate a congregation, we can curate the ideal awareness talk for your group.
               </p>
               <a
                 href="#contact"

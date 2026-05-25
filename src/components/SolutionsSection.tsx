@@ -50,12 +50,12 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
           <span className="text-sm font-bold text-brand-red uppercase tracking-widest font-mono">
             Supplies &amp; Sourcing
           </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-brand-blue tracking-tight">
-            First Aid Kits &amp; Clinical Supplies
+          <h2 id="solutions-main-title" className="text-3xl sm:text-4xl font-display font-extrabold text-brand-blue tracking-tight">
+            First Aid Kits &amp; Essential Sourcing
           </h2>
           <div className="h-1 w-20 bg-brand-red mx-auto rounded-full" />
           <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-            All medical products, consumables, and emergency units are sourced to meet high quality standards. We offer custom delivery and replenishment plans to support your school, church, or organization.
+            We supply lightweight grab-and-go packs, simple community kits, and premium restock packs tailored for doctors, nurses, schools, local churches, and clinics to make clinical sourcing fast, sterile, and worry-free.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
                   : 'bg-zinc-100 text-zinc-500 hover:text-brand-blue hover:bg-zinc-200'
               }`}
             >
-              {tab === 'all' ? 'All Solutions' : tab === 'kits' ? 'First Aid Kits' : 'Consumables & Packs'}
+              {tab === 'all' ? 'All Items' : tab === 'kits' ? 'Grab-and-Go Bags & Kits' : 'Refills & Supplies'}
             </button>
           ))}
         </div>
@@ -100,12 +100,19 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
                       <div className="w-11 h-11 bg-brand-red/10 border border-brand-red/20 rounded-full flex items-center justify-center text-brand-red">
                         <BriefcaseMedical className="w-5.5 h-5.5" />
                       </div>
-                      <span className="text-[10px] uppercase font-mono tracking-widest text-brand-accent">Ready for Communities</span>
+                      <span className="text-[10px] uppercase font-mono tracking-widest text-brand-accent">
+                        {product.id === 'sterile-consumables-pack' ? 'Clinical Grade Refills' : 'Ready for Communities'}
+                      </span>
                     </div>
 
                     <span className="absolute bottom-3 right-3 text-[10px] font-mono uppercase bg-white/5 text-zinc-300 border border-white/10 px-2.5 py-1 rounded-md">
-                      {product.category}
+                      {product.id === 'sterile-consumables-pack' ? 'Practitioner Refill' : product.category === 'kits' ? 'Grab-and-Go Bag' : product.category}
                     </span>
+                    {product.id === 'sterile-consumables-pack' && (
+                      <span className="absolute top-3 right-3 text-[9px] font-bold font-mono tracking-wider bg-brand-red text-white border border-brand-red/50 px-2.5 py-0.5 rounded-full uppercase shadow">
+                        For Doctors &amp; Nurses
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -131,15 +138,17 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
                   </div>
                 </div>
 
-                {/* Bottom Badges */}
+                {/* Bottom Badges & Action */}
                 <div className="flex flex-col gap-3 mt-6 pt-4 border-t border-zinc-200/50">
-                  <div className="flex flex-wrap gap-1.5 justify-start">
-                    {product.highlights.map((hlt, hIdx) => (
-                      <span key={hIdx} className="text-[9px] font-mono uppercase bg-brand-red-light text-brand-red px-2 py-0.5 rounded-full font-bold">
-                        {hlt}
-                      </span>
-                    ))}
-                  </div>
+                  {product.highlights && product.highlights.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 justify-start">
+                      {product.highlights.map((hlt, hIdx) => (
+                        <span key={hIdx} className="text-[9px] font-mono uppercase bg-brand-red-light text-brand-red px-2 py-0.5 rounded-full font-bold">
+                          {hlt}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   <button
                     type="button"
@@ -156,32 +165,37 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
         </div>
 
         {/* Regulatory Banner Info Block */}
-        <div id="solutions-compliance-info" className="mt-16 bg-brand-blue-light/15 border border-brand-blue-light/20 p-8 rounded-3xl text-left flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3 py-1 rounded-md text-[10px] font-mono text-brand-red font-bold uppercase">
-              <ShieldAlert className="w-3.5 h-3.5" />
+        <div id="solutions-compliance-info" className="mt-20 bg-gradient-to-br from-zinc-50 via-white to-zinc-50 border-2 border-brand-red/40 p-8 sm:p-10 rounded-3xl text-left shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+          
+          {/* Accent decoration for eye-catching appearance */}
+          <div className="absolute top-0 left-0 w-2 h-full bg-brand-red" />
+          
+          <div className="space-y-4 max-w-3xl pl-2">
+            <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3.5 py-1.5 rounded-full text-[10px] font-mono text-brand-red font-bold uppercase tracking-wider">
+              <ShieldAlert className="w-4 h-4 text-brand-red animate-pulse animate-duration-1000" />
               <span>South Africa Emergency Awareness Support</span>
             </div>
             
-            <h3 className="font-display font-extrabold text-white text-lg tracking-tight">
+            <h3 className="font-display font-extrabold text-brand-blue text-xl sm:text-2xl tracking-tight leading-tight">
               First Aid Kit Replenishment &amp; Support
             </h3>
             
-            <p className="text-zinc-400 text-xs leading-relaxed">
-              Did you know that keeping expired elements in educational or community First Aid boxes makes them unsafe to use? We provide friendly restocking suggestions and supply support. Robbie's team can supply clean, fresh materials to keep your kits up-to-date and ready for your school, church, or organization.
+            <p className="text-zinc-700 text-xs sm:text-sm leading-relaxed">
+              <strong className="text-brand-red font-extrabold">Did you know that keeping expired elements in educational or community First Aid boxes makes them unsafe to use?</strong> We provide friendly restocking suggestions and supply support. Robbie's team can supply clean, fresh materials to keep your kits up-to-date and ready for your school, church, or organization.
             </p>
           </div>
 
-          <div className="shrink-0 space-y-3.5 w-full md:w-auto">
-            <div className="p-4.5 bg-white border border-zinc-150 rounded-2xl shadow-sm text-center">
-              <span className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1">Direct Queries</span>
+          <div className="shrink-0 w-full md:w-auto">
+            <div className="p-5.5 bg-white border border-brand-red/20 rounded-2xl shadow-sm text-center">
+              <span className="block text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-2 font-bold">Inquire Directly</span>
               <a
                 href={`tel:${COMPANY_DETAILS.phonePrimary.replace(/\s+/g, '')}`}
-                className="inline-flex items-center space-x-2.5 text-brand-red hover:text-brand-red/85 font-mono text-xs font-extrabold"
+                className="inline-flex items-center space-x-2 bg-brand-red hover:bg-brand-red/90 text-white px-5 py-3 rounded-xl shadow-md transition-all duration-150 font-mono text-xs font-extrabold"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
-                <span>Call Our Team: {COMPANY_DETAILS.phonePrimary}</span>
+                <span>Call Robbie: {COMPANY_DETAILS.phonePrimary}</span>
               </a>
+              <span className="block text-[10px] text-zinc-400 mt-2 font-semibold">Fast, helpful response</span>
             </div>
           </div>
         </div>

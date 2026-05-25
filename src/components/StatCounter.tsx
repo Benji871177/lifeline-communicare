@@ -92,7 +92,7 @@ export default function StatCounter() {
               <div className="space-y-1 text-left">
                 <h4 className="font-display font-bold text-sm text-zinc-900">Community-Driven Sharing</h4>
                 <p className="text-zinc-500 text-xs leading-relaxed font-sans">
-                  Simple, equipment-free demonstrations designed for school readiness and civic confidence.
+                  Simple, equipment-free demonstrations designed for school, sports, and neighbourhood watch readiness.
                 </p>
               </div>
             </div>
@@ -126,9 +126,9 @@ export default function StatCounter() {
                 <History className="w-6 h-6" />
               </div>
               <div className="space-y-1 text-left">
-                <h4 className="font-display font-bold text-sm text-zinc-900">Gauteng & Beyond Coverage</h4>
+                <h4 className="font-display font-bold text-sm text-zinc-900">Nationwide Reach (T&C Apply)</h4>
                 <p className="text-zinc-500 text-xs leading-relaxed font-sans">
-                  Building deep local emergency partnerships, maintaining reliable emergency cabinets, and training life-savers.
+                  Building deep community emergency partnerships, maintaining reliable medicine cabinets, and supporting life-savers across South Africa.
                 </p>
               </div>
             </div>

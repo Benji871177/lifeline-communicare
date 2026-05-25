@@ -100,7 +100,7 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center space-x-3 text-sm text-zinc-700">
                 <ShieldCheck className="w-5 h-5 text-brand-red shrink-0" />
-                <span><strong>Local Community Dedication:</strong> Specifically tailored for school campuses, churches, youth groups, and homes throughout South Africa.</span>
+                <span><strong>Local Community Dedication:</strong> Specifically tailored for schools, sporting bodies, neighbourhood watches, youth groups, and homes throughout South Africa.</span>
               </div>
             </div>
           </div>
