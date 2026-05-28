@@ -20,6 +20,8 @@ import SolutionsSection from './components/SolutionsSection';
 import ContactForm from './components/ContactForm';
 import CommunityImpactSection from './components/CommunityImpactSection';
 import CorporateSponsorshipSection from './components/CorporateSponsorshipSection';
+import PreparednessPortal from './components/PreparednessPortal';
+import PreparednessSummarySection from './components/PreparednessSummarySection';
 
 export default function App() {
   const [activePage, setActivePage] = useState<PageId>('home');
@@ -58,6 +60,9 @@ export default function App() {
 
                 {/* Dynamic Inline Services Highlights */}
                 <ServicesList />
+
+                {/* Emergency Awareness & Goals Section (Curiosity Summary to link to full page) */}
+                <PreparednessSummarySection onPageChange={handlePageChange} />
 
                 {/* Sourcing Prompt Panel */}
                 <section className="bg-zinc-900 text-white py-16 relative">
@@ -144,6 +149,12 @@ export default function App() {
             {activePage === 'contact' && (
               <div id="contact-page-view">
                 <ContactForm />
+              </div>
+            )}
+
+            {activePage === 'preparedness' && (
+              <div id="preparedness-page-view">
+                <PreparednessPortal onPageChange={handlePageChange} />
               </div>
             )}
           </motion.div>

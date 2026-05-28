@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Mail, Phone, MapPin, Activity, Heart, ShieldAlert } from 'lucide-react';
+import { Mail, Phone, MapPin, Activity, Heart, ShieldAlert, Info, AlertTriangle } from 'lucide-react';
 import { PageId } from '../types';
 import { COMPANY_DETAILS } from '../data';
 
@@ -144,8 +144,46 @@ export default function Footer({ onPageChange }: FooterProps) {
 
         </div>
 
+        {/* Legal Disclaimers & Compliance Panels */}
+        <div id="footer-disclaimer-panel" className="mt-16 pt-8 border-t border-white/10 space-y-6">
+          <div className="flex items-center space-x-2 bg-brand-red/10 border border-brand-red/20 rounded-xl px-4 py-2 w-fit">
+            <AlertTriangle className="w-4 h-4 text-brand-red shrink-0" />
+            <span className="text-[10px] font-bold font-mono text-brand-red uppercase tracking-wider">Company Legal Disclaimer &amp; Regulatory Notice</span>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-[11px] text-zinc-400 leading-relaxed text-left">
+            <div className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+              <span className="font-mono font-bold text-zinc-200 text-xs block border-b border-white/5 pb-1 uppercase tracking-tight">1. Educational Scope</span>
+              <p className="text-zinc-400">
+                All Lifeline Communi-Care training, classroom awareness, and emergency simulations are informational and designed to promote emergency preparedness. They do not constitute clinical nursing, therapy, or paraphysical medical licensure.
+              </p>
+            </div>
+
+            <div className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+              <span className="font-mono font-bold text-zinc-200 text-xs block border-b border-white/5 pb-1 uppercase tracking-tight">2. Supply Sourcing T&amp;Cs</span>
+              <p className="text-zinc-400">
+                First Aid kit materials, medical refills, and dental supplies are secured from approved certified manufacturing partners. Customers must evaluate kit expiries and follow guidelines associated with individual treatment gear.
+              </p>
+            </div>
+
+            <div className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+              <span className="font-mono font-bold text-zinc-200 text-xs block border-b border-white/5 pb-1 uppercase tracking-tight">3. Not a Live EMS Line</span>
+              <p className="text-zinc-400">
+                The dispatches and server channels on this website are for consultations and scheduled coordination only. In the event of a live medical emergency in South Africa, please dial national responders immediately (e.g., <strong className="text-brand-red">10111</strong>, <strong className="text-brand-red">10177</strong>, or <strong className="text-brand-red">112</strong>).
+              </p>
+            </div>
+
+            <div className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+              <span className="font-mono font-bold text-zinc-200 text-xs block border-b border-white/5 pb-1 uppercase tracking-tight">4. POPIA Privacy Statement</span>
+              <p className="text-zinc-400">
+                In absolute adherence to the Protection of Personal Information Act (POPIA), all contact records, inquiry details, or corporate correspondence are preserved solely to answer requests and process services, and are never shared.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Legal & Compliance Bottom Bar */}
-        <div id="footer-compliance-row" className="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-400">
+        <div id="footer-compliance-row" className="border-t border-white/5 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-400">
           <div className="text-center md:text-left space-y-1">
             <p>&copy; {currentYear} {COMPANY_DETAILS.name}. All Rights Reserved.</p>
             <p className="font-mono text-[10px] text-zinc-500">

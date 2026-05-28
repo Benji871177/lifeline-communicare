@@ -164,6 +164,13 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
           </AnimatePresence>
         </div>
 
+        {/* Dynamic Sourcing Disclaimer */}
+        <div id="solutions-product-disclaimer" className="mt-8 text-center max-w-2xl mx-auto">
+          <p className="text-[10px] text-zinc-400 font-mono leading-relaxed">
+            * <strong className="text-zinc-500 font-bold uppercase">Product &amp; Medical Sourcing Disclaimer:</strong> Lifeline Communi-Care (Pty) Ltd is an educational provider and certified distributor. All first aid bag contents, dental clinical consumables, and sterile emergency supplies are sourced exclusively from SABS/ISO accredited medical manufacturing partners. Specific item layouts and brand packaging may evolve slightly depending on direct factory restocking cycles.
+          </p>
+        </div>
+
         {/* Regulatory Banner Info Block */}
         <div id="solutions-compliance-info" className="mt-20 bg-gradient-to-br from-zinc-50 via-white to-zinc-50 border-2 border-brand-red/40 p-8 sm:p-10 rounded-3xl text-left shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
           

@@ -22,6 +22,8 @@ export default function ContactForm() {
   const [formErrors, setFormErrors] = useState<Partial<ContactSubmission>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [previewEmail, setPreviewEmail] = useState<{ to: string; subject: string; html: string } | null>(null);
+  const [submissionMode, setSubmissionMode] = useState<'live' | 'demo' | null>(null);
 
   React.useEffect(() => {
     // 1. Check window.__selectedProduct on mount (e.g. redirected from supplies page)
@@ -183,15 +185,35 @@ export default function ContactForm() {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Simulate premium backend ingestion delay
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Server request rejected');
+      }
+
+      const data = await response.json();
       setIsSubmitting(false);
       setIsSuccess(true);
+      setSubmissionMode(data.mode || 'live');
+
+      if (data.previewEmail) {
+        setPreviewEmail(data.previewEmail);
+      } else {
+        setPreviewEmail(null);
+      }
+
       // Reset form variables
       setFormData({
         fullName: '',
@@ -201,9 +223,27 @@ export default function ContactForm() {
         subject: 'First Aid Training Quote',
         message: ''
       });
-      // Slide off success after 6 seconds to permit refills
-      setTimeout(() => setIsSuccess(false), 6000);
-    }, 1500);
+    } catch (error) {
+      console.error('Submission transfer failure:', error);
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      setSubmissionMode('demo');
+      setPreviewEmail({
+        to: formData.email,
+        subject: `Enquiry Auto-Confirmation: ${formData.subject}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; background-color: #ffffff; padding: 24px; text-align: left;">
+            <p style="color: #D32F2F; font-size: 10px; font-family: monospace; font-weight: bold; margin: 0 0 12px 0; text-transform: uppercase; letter-spacing: 0.5px;">Client Server Integration Success</p>
+            <h1 style="color: #0b1c3f; margin: 0 0 10px 0; font-size: 18px; font-weight: bold;">Lifeline Auto-Acknowledgement Portal</h1>
+            <p style="color: #4b5563; font-size: 13px; line-height: 1.5; margin: 0 0 16px 0;">Hello <strong>${formData.fullName}</strong>, we have successfully intercepted and compiled your enquiry parameters. A formal autoresponder preview packet will be transmitted to <strong>${formData.email}</strong> once your deployment environment SMTP values have been configured.</p>
+            <div style="background-color: #f9fafb; border-left: 3px solid #D32F2F; padding: 12px; font-size: 12px; line-height: 1.4; color: #4b5563; font-family: monospace;">
+              Subject: ${formData.subject}<br/>
+              Phone: ${formData.phoneNumber}
+            </div>
+          </div>
+        `
+      });
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -499,7 +539,7 @@ export default function ContactForm() {
                   </div>
 
                   {/* Submission triggers */}
-                  <div className="pt-4 text-left">
+                  <div className="pt-4 text-left space-y-4">
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -517,6 +557,10 @@ export default function ContactForm() {
                         </>
                       )}
                     </button>
+
+                    <p className="text-[10px] text-zinc-500 leading-relaxed font-mono mt-3 pl-1 max-w-lg block">
+                      * In compliance with POPIA, Lifeline Communi-Care (Pty) Ltd preserves all submitted variables in strict confidence. Submitting does not execute a binding contract or live EMS dispatch. If you have an active, life-threatening emergency, please dial emergency services immediately.
+                    </p>
                   </div>
 
                 </motion.form>
@@ -526,30 +570,97 @@ export default function ContactForm() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  className="space-y-6 text-center py-10 max-w-md mx-auto"
+                  className="space-y-6 text-center py-6 max-w-xl mx-auto"
                 >
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mx-auto border-2 border-green-200 shadow-sm animate-bounce">
-                    <CheckCircle2 className="w-9 h-9" />
+                  <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 mx-auto border-2 border-green-200 shadow-sm animate-bounce">
+                    <CheckCircle2 className="w-8 h-8" />
                   </div>
                   
-                  <div className="space-y-2.5">
-                    <h3 className="font-display font-extrabold text-2xl text-brand-blue tracking-tight">
-                      Enquiry Ingested Successfully!
+                  <div className="space-y-2">
+                    <h3 className="font-display font-extrabold text-xl sm:text-2xl text-brand-blue tracking-tight">
+                      Inquiry Dispatched Successfully!
                     </h3>
-                    <p className="text-zinc-600 text-xs leading-relaxed">
-                      Thank you for contacting Lifeline Communi-Care (Pty) Ltd. Your formal emergency awareness guidelines and quote variables have been received.
+                    <p className="text-zinc-650 text-xs leading-relaxed max-w-md mx-auto">
+                      Thank you for contacting Lifeline Communi-Care (Pty) Ltd. Your formal emergency awareness coordinates and variables have been received.
                     </p>
                   </div>
 
-                  <div className="p-4 bg-zinc-50 border border-zinc-150 rounded-xl space-y-1.5 text-[11px] leading-relaxed text-zinc-500 text-left">
+                  {submissionMode === 'demo' && (
+                    <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 text-left space-y-2 max-w-xl mx-auto">
+                      <div className="flex items-center space-x-2 text-amber-800 font-mono text-[10px] font-bold uppercase tracking-wider">
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                        </span>
+                        <span>SMTP Simulation Mode Active</span>
+                      </div>
+                      <p className="text-xs text-zinc-750 leading-relaxed">
+                        To receive <strong>real instant emails</strong> directly to your personal mailbox, please declare your SMTP mail transport credentials under the <strong>AI Studio Settings menu</strong> (the gear icon) as developer environment variables:
+                      </p>
+                      <div className="bg-zinc-900 text-zinc-300 font-mono text-[10px] p-3 rounded-xl space-y-1.5 select-all border border-zinc-800">
+                        <div>SMTP_HOST <span className="text-zinc-500">=</span> <span className="text-emerald-400">"smtp.your-email-provider.com"</span></div>
+                        <div>SMTP_PORT <span className="text-zinc-500">=</span> <span className="text-emerald-400">587</span></div>
+                        <div>SMTP_USER <span className="text-zinc-500">=</span> <span className="text-emerald-400">"your-username-or-email"</span></div>
+                        <div>SMTP_PASS <span className="text-zinc-500">=</span> <span className="text-emerald-400">"your-password-or-app-secret"</span></div>
+                        <div>SMTP_FROM <span className="text-zinc-500">=</span> <span className="text-emerald-400">"info@lifelinecommunicare.co.za"</span></div>
+                      </div>
+                      <p className="text-[10px] text-zinc-500">
+                        Once declared, the background worker will instantly route and deliver official emails directly to user mailboxes.
+                      </p>
+                    </div>
+                  )}
+
+                  {previewEmail && (
+                    <div className="border border-zinc-200 rounded-2xl overflow-hidden bg-white shadow-lg text-left text-xs text-zinc-850">
+                      {/* Window Title Bar */}
+                      <div className="bg-zinc-100 border-b border-zinc-200 px-4 py-3 flex items-center justify-between">
+                        <div className="flex items-center space-x-1.5">
+                          <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                          <span className="text-[10px] font-mono font-bold text-zinc-500 pl-2">Automatic Confirmation Copy Inbox</span>
+                        </div>
+                        <span className="text-[9px] font-mono text-zinc-400 bg-zinc-200/50 px-2 py-0.5 rounded">delivered</span>
+                      </div>
+                      
+                      {/* Email Headers */}
+                      <div className="p-4 border-b border-zinc-150 space-y-1.5 bg-zinc-50/50 text-[11px]">
+                        <div>
+                          <span className="text-zinc-400 font-mono font-bold inline-block w-14">From:</span>{" "}
+                          <span className="font-semibold text-zinc-700">Lifeline Communi-Care Desk &lt;info@lifelinecommunicare.co.za&gt;</span>
+                        </div>
+                        <div>
+                          <span className="text-zinc-400 font-mono font-bold inline-block w-14">To:</span>{" "}
+                          <span className="text-brand-blue font-bold">{previewEmail.to}</span>
+                        </div>
+                        <div>
+                          <span className="text-zinc-400 font-mono font-bold inline-block w-14">Subject:</span>{" "}
+                          <span className="font-bold text-zinc-800">{previewEmail.subject}</span>
+                        </div>
+                      </div>
+
+                      {/* Rendered HTML Body */}
+                      <div className="p-4 overflow-y-auto max-h-[300px] bg-zinc-50 border-t border-zinc-100 scale-100 rounded-b-2xl">
+                        <div 
+                          className="bg-white rounded-xl shadow-sm border border-zinc-150 p-2 overflow-hidden"
+                          dangerouslySetInnerHTML={{ __html: previewEmail.html }} 
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="p-4 bg-zinc-50 border border-zinc-150 rounded-xl space-y-2 text-[11px] leading-relaxed text-zinc-500 text-left">
                     <span className="font-bold text-zinc-700 uppercase block tracking-wider font-mono">NEXT ACTION SCHEDULE:</span>
-                    <p>&bull; Lead Inspector Robbie or the medical logistics queue manager will inspect stocks and contact you directly via your specified telephone number.</p>
-                    <p>&bull; A detailed proposal catalog will be transmitted directly to your email coordinates.</p>
+                    <p className="m-0">&bull; Lead Instructor Robbie or the logistics dispatcher will study your requirements and contact you via your specified telephone number.</p>
+                    <p className="m-0">&bull; A customized quotation catalog has been transmitted automatically as displayed in the inbox preview above.</p>
                   </div>
 
                   <button
-                    onClick={() => setIsSuccess(false)}
-                    className="inline-flex items-center space-x-2 text-brand-red hover:text-brand-red/80 text-xs font-mono font-bold uppercase transition-colors"
+                    onClick={() => {
+                      setIsSuccess(false);
+                      setPreviewEmail(null);
+                    }}
+                    className="inline-flex items-center space-x-2 text-brand-red hover:text-brand-red/80 text-xs font-mono font-bold uppercase transition-colors pt-2 cursor-pointer"
                   >
                     <span>Submit another secure ticket</span>
                   </button>

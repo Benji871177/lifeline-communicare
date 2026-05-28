@@ -20,6 +20,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Us' },
     { id: 'services', label: 'Our Services' },
+    { id: 'preparedness', label: 'Mission & Vision' },
     { id: 'solutions', label: 'Supplies & Solutions' },
     { id: 'sponsorship', label: 'Sponsorship' },
     { id: 'contact', label: 'Contact' },
