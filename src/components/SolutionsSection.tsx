@@ -55,7 +55,7 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
           </h2>
           <div className="h-1 w-20 bg-brand-red mx-auto rounded-full" />
           <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-            We supply lightweight grab-and-go packs, simple community kits, and premium restock packs tailored for doctors, nurses, schools, local churches, and clinics to make clinical sourcing fast, sterile, and worry-free.
+            We supply simple community kits and premium restock packs tailored for doctors, nurses, schools, local churches, and clinics to make clinical sourcing fast, sterile, and worry-free.
           </p>
         </div>
 
@@ -71,13 +71,13 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
                   : 'bg-zinc-100 text-zinc-500 hover:text-brand-blue hover:bg-zinc-200'
               }`}
             >
-              {tab === 'all' ? 'All Items' : tab === 'kits' ? 'Grab-and-Go Bags & Kits' : 'Refills & Supplies'}
+              {tab === 'all' ? 'All Items' : tab === 'kits' ? 'Bags & Kits' : 'Refills & Supplies'}
             </button>
           ))}
         </div>
 
         {/* Dynamic Cards Grid */}
-        <div id="solutions-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+        <div id="solutions-grid" className={`grid grid-cols-1 md:grid-cols-2 ${filteredProducts.length <= 2 ? 'lg:grid-cols-2 max-w-4xl' : 'lg:grid-cols-3'} gap-8 mx-auto text-left`}>
           <AnimatePresence mode="popLayout">
             {filteredProducts.map((product) => (
               <motion.div
@@ -123,19 +123,6 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
                       {product.description}
                     </p>
                   </div>
-
-                  {/* Core Content specifications */}
-                  <div className="space-y-2.5 border-t border-zinc-200/50 pt-4 text-left">
-                    <h4 className="text-[10px] uppercase font-mono tracking-wider font-bold text-zinc-400">Box Contents Include:</h4>
-                    <ul className="space-y-1.5 text-xs text-zinc-600">
-                      {product.specifications.slice(0, 3).map((spec, sIdx) => (
-                        <li key={sIdx} className="flex items-start gap-2 text-left">
-                          <Check className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
-                          <span>{spec}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
 
                 {/* Bottom Badges & Action */}
@@ -167,7 +154,7 @@ export default function SolutionsSection({ onPageChange }: SolutionsSectionProps
         {/* Dynamic Sourcing Disclaimer */}
         <div id="solutions-product-disclaimer" className="mt-8 text-center max-w-2xl mx-auto">
           <p className="text-[10px] text-zinc-400 font-mono leading-relaxed">
-            * <strong className="text-zinc-500 font-bold uppercase">Product &amp; Medical Sourcing Disclaimer:</strong> Lifeline Communi-Care (Pty) Ltd is an educational provider and certified distributor. All first aid bag contents, dental clinical consumables, and sterile emergency supplies are sourced exclusively from SABS/ISO accredited medical manufacturing partners. Specific item layouts and brand packaging may evolve slightly depending on direct factory restocking cycles.
+            * <strong className="text-zinc-500 font-bold uppercase">Product &amp; Medical Sourcing Disclaimer:</strong> Lifeline Communi-Care (Pty) Ltd. is an educational provider and certified distributor. All first aid bag contents, dental clinical consumables, and sterile emergency supplies are sourced exclusively from SABS/ISO accredited medical manufacturing partners. Specific item layouts and brand packaging may evolve slightly depending on direct factory restocking cycles.
           </p>
         </div>
 

@@ -559,7 +559,7 @@ export default function ContactForm() {
                     </button>
 
                     <p className="text-[10px] text-zinc-500 leading-relaxed font-mono mt-3 pl-1 max-w-lg block">
-                      * In compliance with POPIA, Lifeline Communi-Care (Pty) Ltd preserves all submitted variables in strict confidence. Submitting does not execute a binding contract or live EMS dispatch. If you have an active, life-threatening emergency, please dial emergency services immediately.
+                      * In compliance with POPIA, Lifeline Communi-Care (Pty) Ltd. preserves all submitted variables in strict confidence. Submitting does not execute a binding contract or live EMS dispatch. If you have an active, life-threatening emergency, please dial emergency services immediately.
                     </p>
                   </div>
 

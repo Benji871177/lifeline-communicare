@@ -6,7 +6,7 @@
 import { ServiceItem, ProductItem, TeamMember, EmergencyActionGuide } from './types';
 
 export const COMPANY_DETAILS = {
-  name: 'Lifeline Communi-Care (Pty) Ltd',
+  name: 'Lifeline Communi-Care (Pty) Ltd.',
   registrationNum: '2026 / 403127 / 07',
   slogan: 'BE AWARE. BE PREPARED. SAVE LIVES.',
   primaryContactName: 'Robbie',
@@ -110,7 +110,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
   {
     id: 'pro-workplace-kit',
     category: 'kits',
-    name: 'Standard Community First Aid Kit',
+    name: 'Community First Aid Kit',
     description: 'A clean, compact kit with essential supplies, perfect for school classrooms, church halls, and small community groups.',
     specifications: [
       'Basic triangular bandages, gauze pads, and sterile dressings',
@@ -119,19 +119,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
     ],
     highlights: [],
     imageName: 'industrial_kit'
-  },
-  {
-    id: 'tactical-trauma-bag',
-    category: 'kits',
-    name: 'Grab-and-Go Emergency Bag',
-    description: 'A travel-friendly, lightweight emergency bag with a shoulder strap. Designed to be grabbed instantly for any minor classroom, outdoor, or community incident.',
-    specifications: [
-      'Essential conforming bandages, trauma shears, and plasters',
-      'Compact water-resistant soft shell with comfortable handles',
-      'Transparent inside pouches for quick identification of items'
-    ],
-    highlights: [],
-    imageName: 'trauma_bag'
   },
   {
     id: 'sterile-consumables-pack',

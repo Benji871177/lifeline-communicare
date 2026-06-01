@@ -107,7 +107,7 @@ export default function PreparednessPortal({ onPageChange }: PreparednessPortalP
                   LIFELINE
                 </h1>
                 <p className="font-mono text-brand-red font-bold text-[9px] tracking-widest uppercase">
-                  COMMUNI-CARE <span className="text-zinc-400 font-normal">(PTY) LTD</span>
+                  COMMUNI-CARE <span className="text-zinc-400 font-normal">(PTY) LTD.</span>
                 </p>
                 
                 {/* Heart rate wave mini SVG widget */}
@@ -292,7 +292,7 @@ export default function PreparednessPortal({ onPageChange }: PreparednessPortalP
               <p className="text-[11px] sm:text-xs text-zinc-300 leading-relaxed max-w-4xl font-sans">
                 <strong>DISCLAIMER:</strong> Lifeline Communi-care (Pty) Ltd provides emergency awareness and preparedness information for educational purposes only. The content is not a substitute for professional medical training, advice, diagnosis or treatment. In any emergency, always call <strong>112</strong> or <strong>021 480 7700 (Toll Free)</strong> immediately.
                 <br className="mt-2 block" />
-                Lifeline Communi-care (Pty) Ltd, it's members, facilitators and associates accept no liability for any loss, injury or damage arising from the use of this information. Participation is at your own risk.
+                <span className="text-white font-bold">Lifeline Communi-care (Pty) Ltd, it's members, facilitators and associates accept no liability for any loss, injury or damage arising from the use of this information. Participation is at your own risk.</span>
               </p>
             </div>
           </div>

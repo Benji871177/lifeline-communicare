@@ -30,7 +30,7 @@ export default function AboutSection() {
           </h2>
           <div className="h-1 w-20 bg-brand-red mx-auto rounded-full" />
           <p className="text-zinc-600 text-base sm:text-lg leading-relaxed pt-2">
-            LIFELINE COMMUNI-CARE (PTY) LTD is a premier, South African-based medical emergency support and friendly safety training group. We specialize in transforming passive environments into active safety-first zones.
+            LIFELINE COMMUNI-CARE (PTY) LTD. is a premier, South African-based medical emergency support and friendly safety training group. We specialize in transforming passive environments into active safety-first zones.
           </p>
         </div>
 

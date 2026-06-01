@@ -40,7 +40,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
               >
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tighter uppercase leading-none select-none">
                   <span className="text-white">LIFELINE</span>{' '}
-                  <span className="text-brand-red block sm:inline">COMMUNI-CARE <span className="text-zinc-400 text-lg sm:text-2xl md:text-3xl lg:text-4xl font-sans tracking-normal font-medium capitalize select-none align-middle ml-1.5 sm:ml-2">Pty Ltd</span></span>
+                  <span className="text-brand-red block sm:inline">COMMUNI-CARE <span className="text-zinc-400 text-lg sm:text-2xl md:text-3xl lg:text-4xl font-sans tracking-normal font-medium capitalize select-none align-middle ml-1.5 sm:ml-2">(Pty) Ltd.</span></span>
                 </h1>
               </motion.div>
 
