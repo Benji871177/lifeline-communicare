@@ -99,7 +99,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                   Critical Emergency Bulletin
                 </h4>
                 <p className="text-white text-sm font-medium leading-relaxed italic">
-                  “An emergency is a sudden, unexpected, and dangerous situation that poses an immediate threat to life or health.”
+                  “An emergency is a sudden, unexpected, and dangerous event that poses an immediate threat to life or health.”
                 </p>
               </div>
             </motion.div>
