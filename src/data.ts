@@ -50,12 +50,12 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'first-aid-training',
     numberLabel: '01',
-    title: 'Informational Community First Aid & Certified Level 1-3 Training',
-    shortDescription: 'Community-driven emergency awareness plus formal certified Level 1 to 3 First Aid Training courses (T&Cs apply) tailored for schools, sports, watches, and community groups.',
+    title: 'First Aid-Certified Level 1-3 Training',
+    shortDescription: 'Community-driven emergency awareness plus formal certified Level 1 to 3 First Aid Training courses (T&Cs apply) tailored for schools, sports, neighbourhood watch, small businesses and corporate, and community groups.',
     fullDescription: 'Our Informational Community First Aid and certified programs provide crucial emergency wisdom and intuitive guidance directly to local centers, youth programs, church groups, and businesses. Along with our accessible, equipment-free informational sessions, we offer formal certified Level 1 to 3 First Aid Training courses (T&Cs apply) to equip your team with formal responder credentials.',
     benefits: [
       'Formal certified Level 1 to 3 First Aid Training courses (T&Cs apply)',
-      'Tailored approach for schools, sports clubs, neighbourhood watches, and congregations',
+      'Tailored approach for schools, sports clubs, neighbourhood watches, small businesses, corporate, and congregations',
       'Accessible, pure informational sharing (infoshare) with no equipment required',
       'Hands-on CPR instruction and responsive community emergency orientation',
       'Encourages civic readiness, helping everyday community members save lives'
@@ -80,11 +80,11 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: 'medical-consumables',
     numberLabel: '03',
     title: 'Medical Consumables Supply',
-    shortDescription: 'Reliable sourcing and prompt delivery of sterile general medical consumables for clinical environments.',
+    shortDescription: 'Reliable sourcing and prompt delivery of general medical consumables for clinical environments.',
     fullDescription: 'We design complete supply lines for clinical, diagnostic, and private medical communities including General Practitioners (GPs), Dental Clinics, Family Healthcare centers, and corporate medical rooms.',
     benefits: [
       'Hygienic general disposables and clinical consumables',
-      'Comprehensive clinic restock bundles for diagnostics & sterile dressings',
+      'Comprehensive clinic restock bundles for diagnostics & general medical suppliers',
       'Direct-to-facility prompt shipping and support services',
       'Strict quality assurance verification protocols for every item batch'
     ],
@@ -94,11 +94,11 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: 'ems-career-talks',
     numberLabel: '04',
     title: 'Life Orientation & EMS Career Talks',
-    shortDescription: 'Immersive talks designed to introduce educational institutes to Emergency Medical Services pathways.',
-    fullDescription: 'Our interactive Emergency Medical Services informational lectures serve as career-orientated guidance models for academic networks. We introduce the core components, career stages, structural demands, and immense rewards of the EMS world.',
+    shortDescription: 'Immersive talks designed to introduce educational institutes to Emergency Services pathways.',
+    fullDescription: 'Our interactive Emergency Services informational lectures serve as career-orientated guidance models for academic networks. We introduce the core components, career stages, structural demands, and immense rewards of the EMS world.',
     benefits: [
       'Interactive presentations with helpful lifesaving guidance demonstrations',
-      'Clear vocational roadmap outlines for future paramedic or medical rescue paths',
+      'Clear vocational roadmap outlines for future paramedic and career paths',
       'Real-world community emergency case discussions for schools and community centers',
       'Engaging discussions on civic empathy, voluntary rescue corps, and community contribution'
     ],

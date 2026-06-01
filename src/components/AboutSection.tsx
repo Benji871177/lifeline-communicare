@@ -78,7 +78,7 @@ export default function AboutSection() {
 
             <blockquote className="border-l-4 border-brand-red pl-5 py-2">
               <span className="block text-xl font-display font-bold text-brand-blue leading-normal italic">
-                “An EMERGENCY is a sudden, unexpected, and dangerous situation that poses an immediate threat to life or health.”
+                “An EMERGENCY is a sudden, unexpected, and dangerous event that poses an immediate threat to life or health.”
               </span>
               <cite className="block text-xs font-mono text-zinc-500 mt-2 not-italic">
                 &mdash; Lifeline Communi-Care Foundation Guidelines
@@ -100,7 +100,7 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center space-x-3 text-sm text-zinc-700">
                 <ShieldCheck className="w-5 h-5 text-brand-red shrink-0" />
-                <span><strong>Local Community Dedication:</strong> Specifically tailored for schools, sporting bodies, neighbourhood watches, youth groups, and homes throughout South Africa.</span>
+                <span><strong>Local Community Dedication:</strong> Specifically tailored for schools, sporting bodies, neighbourhood watches, small businesses, corporate, youth groups, and homes throughout South Africa.</span>
               </div>
             </div>
           </div>

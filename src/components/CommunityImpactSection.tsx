@@ -23,7 +23,7 @@ const SECTOR_DATA: SectorItem[] = [
     description: 'Bustling classrooms, athletic fields, and playgrounds.',
     why: 'Young children are active and adventurous. Our awareness talks empower educators, caretakers, and assistants with the basic readiness to manage minor injuries, choking, medical emergencies or play-area falls calmly.'
   },
-
+  {
     id: 'sporting-bodies',
     icon: Trophy,
     title: 'Sporting Bodies & Clubs',
@@ -42,7 +42,7 @@ const SECTOR_DATA: SectorItem[] = [
     icon: Church,
     title: 'Churches & Worship Spaces',
     description: 'Multi-generational gatherings and congregational spaces.',
-    why: 'Congregations gather hundreds of young and elderly citizens alike. Preparing welcome helpers, volunteers, and ushers to handle hot weather, fainting, or sudden distress preserves families.'
+    why: 'Congregations gather hundreds of young and elderly citizens alike. Preparing welcome helpers, volunteers, and ushers to manage weather related illnesses, fainting, or sudden distress symptoms to preserve life.'
   },
   {
     id: 'youth-groups',
@@ -103,7 +103,7 @@ export default function CommunityImpactSection() {
               <div className="space-y-1.5">
                 <h4 className="font-display font-black text-sm sm:text-base text-brand-blue uppercase tracking-wide">No Medical Background Needed?</h4>
                 <p className="text-zinc-650 text-xs leading-relaxed font-sans">
-                  Absolutely none! All our interactive community sessions are customized so that any grandmother, pupil, coach, or teacher can absorb the core elements immediately.
+                  Absolutely none! All our interactive community sessions are customized so that any grandmother, pupil, coach, or educator can absorb the core elements immediately.
                 </p>
               </div>
             </div>
@@ -151,7 +151,7 @@ export default function CommunityImpactSection() {
             {/* Bottom summary encouragement note */}
             <div className="p-6 bg-zinc-90 w-full border border-dashed border-zinc-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
               <p className="text-xs text-zinc-500 max-w-md font-sans leading-relaxed">
-                Whether you lead a neighbourhood watch, manage a sports team, support a school, or coordinate a congregation, we can curate the ideal awareness talk for your group.
+                Whether you lead a <strong>neighbourhood watch</strong>, manage a sports team, support a school, or coordinate a congregation, we can curate the ideal awareness talk for your group.
               </p>
               <a
                 href="#contact"

@@ -512,7 +512,7 @@ export default function ContactForm() {
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-zinc-300 rounded-xl text-xs text-zinc-800 focus:outline-none focus:border-brand-blue cursor-pointer"
                     >
-                      <option value="First Aid Training Quote">Informational Community First Aid &amp; Certified Level 1-3 Training (T&amp;Cs apply)</option>
+                      <option value="First Aid Training Quote">First Aid-Certified Level 1-3 Training (T&amp;Cs apply)</option>
                       <option value="Corporate Sponsorship &amp; CSR">Corporate Sponsorship &amp; CSR (Schools, Clubs &amp; Affiliates)</option>
                       <option value="Supply & Maintenance of Kits">Source, supply, deliver &amp; maintain First Aid Kits</option>
                       <option value="Medical Consumables Procurement">Dentist, GP, or Clinic Consumables Procurement</option>

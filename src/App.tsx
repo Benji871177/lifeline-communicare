@@ -117,7 +117,7 @@ export default function App() {
                       South African Civic Dedication
                     </h3>
                     <p className="text-zinc-600 text-sm leading-relaxed">
-                      Founded by Lead Coordinator Robbie, Lifeline Communi-Care (Pty) Ltd operates with the single baseline aspiration of elevating first-responder efficiency across the general population. We work actively with schools, sporting bodies, neighbourhood watches, and community clinics to coordinate emergency preparedness programs.
+                      Founded by Lead Coordinator Robbie, Lifeline Communi-Care (Pty) Ltd operates with the single baseline aspiration of elevating first-responder efficiency across the general population. We work actively with schools, sporting bodies, neighbourhood watches, small businesses, corporate, and community clinics to coordinate emergency preparedness programs.
                     </p>
                     
                     <div className="pt-2 text-center">

@@ -79,7 +79,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                   transition={{ duration: 0.7, delay: 0.65 }}
                   className="text-zinc-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
                 >
-                  We empower schools, sporting bodies, neighbourhood watches, church ministries, youth programs, and community groups across South Africa through accessible emergency awareness infoshare sessions, accredited first aid training, and interactive lessons that equip individuals with practical life-saving skills and emergency preparedness knowledge.
+                  We empower schools, sporting bodies, neighbourhood watches, small businesses, corporate, church ministries, youth programs, and community groups across South Africa through accessible emergency awareness infoshare sessions, accredited first aid training, and interactive lessons that equip individuals with practical life-saving skills and emergency preparedness knowledge.
                 </motion.p>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
                     Accessible, Equipment-Free Emergency Guidance
                   </h3>
                   <p className="text-zinc-300 text-xs leading-relaxed">
-                    Designed to inspire confidence in schools, sporting bodies, neighbourhood watches, and community groups alike.
+                    Designed to inspire confidence in schools, sporting bodies, neighbourhood watches, small businesses, corporate, and community groups alike.
                   </p>
                 </div>
 
