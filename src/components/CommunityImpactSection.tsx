@@ -150,8 +150,8 @@ export default function CommunityImpactSection() {
 
             {/* Bottom summary encouragement note */}
             <div className="p-6 bg-zinc-90 w-full border border-dashed border-zinc-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
-              <p className="text-xs text-zinc-500 max-w-md font-sans leading-relaxed">
-                Whether you lead a <strong>neighbourhood watch</strong>, manage a sports team, support a school, or coordinate a congregation, we can curate the ideal awareness talk for your group.
+              <p className="text-xs text-zinc-900 max-w-md font-sans font-bold leading-relaxed">
+                Whether you lead a neighbourhood watch, manage a sports team, support a school, or coordinate a congregation, we can curate the ideal awareness talk for your group.
               </p>
               <a
                 href="#contact"

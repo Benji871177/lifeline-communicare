@@ -150,6 +150,15 @@ export default function Footer({ onPageChange }: FooterProps) {
             <AlertTriangle className="w-4 h-4 text-brand-red shrink-0" />
             <span className="text-[10px] font-bold font-mono text-brand-red uppercase tracking-wider">Company Legal Disclaimer &amp; Regulatory Notice</span>
           </div>
+
+          <div className="p-5 rounded-2xl bg-[#cc0000]/5 border border-[#cc0000]/10 text-left max-w-5xl">
+            <p className="text-xs text-zinc-300 leading-relaxed">
+              <strong className="text-brand-red">DISCLAIMER:</strong> Lifeline Communi-care (Pty) Ltd provides emergency awareness and preparedness information for educational purposes only. The content is not a substitute for professional medical training, advice, diagnosis or treatment. In any emergency, always call <strong className="text-white">112</strong> or <strong className="text-white">021 480 7700 (Toll Free)</strong> immediately.
+              <span className="block mt-2 text-zinc-400">
+                Lifeline Communi-care (Pty) Ltd, it's members, facilitators and associates accept no liability for any loss, injury or damage arising from the use of this information. Participation is at your own risk.
+              </span>
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-[11px] text-zinc-400 leading-relaxed text-left">
             <div className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
