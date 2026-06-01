@@ -21,9 +21,9 @@ const SECTOR_DATA: SectorItem[] = [
     icon: School,
     title: 'Schools & Crèches',
     description: 'Bustling classrooms, athletic fields, and playgrounds.',
-    why: 'Young children are active and adventurous. Our awareness talks empower teachers, caretakers, and assistants with the basic readiness to handle minor injuries, choking, or play-area falls calmly.'
+    why: 'Young children are active and adventurous. Our awareness talks empower educators, caretakers, and assistants with the basic readiness to manage minor injuries, choking, medical emergencies or play-area falls calmly.'
   },
-  {
+
     id: 'sporting-bodies',
     icon: Trophy,
     title: 'Sporting Bodies & Clubs',
@@ -78,7 +78,7 @@ export default function CommunityImpactSection() {
               </h2>
               
               <p className="text-zinc-650 text-base leading-relaxed font-sans">
-                Emergency readiness shouldn't be trapped behind daunting medical textbooks or strict clinical institutions. Lifeline Communi-Care exists to demystify protective response frameworks for local gathering spots where everyday citizens interact the most.
+                Emergency readiness shouldn't be trapped behind daunting medical textbooks or strict clinical institutions. Lifeline Communi-Care exists to demystify medical response frameworks for local gathering spots where everyday citizens interact the most.
               </p>
             </div>
 
