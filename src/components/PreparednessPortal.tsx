@@ -289,10 +289,10 @@ export default function PreparednessPortal({ onPageChange }: PreparednessPortalP
               <div className="flex items-center space-x-2">
                 <span className="font-mono text-[9px] font-black text-brand-accent tracking-widest uppercase">DISCLAIMER &amp; EMERGENCY POLICY NOTICE</span>
               </div>
-              <p className="text-[11px] sm:text-xs text-zinc-300 leading-relaxed max-w-4xl font-sans">
-                <strong>DISCLAIMER:</strong> Lifeline Communi-care (Pty) Ltd provides emergency awareness and preparedness information for educational purposes only. The content is not a substitute for professional medical training, advice, diagnosis or treatment. In any emergency, always call <strong>112</strong> or <strong>021 480 7700 (Toll Free)</strong> immediately.
+              <p className="text-[11px] sm:text-xs text-white font-bold leading-relaxed max-w-4xl font-sans">
+                <strong className="text-brand-red">DISCLAIMER:</strong> Lifeline Communi-care (Pty) Ltd provides emergency awareness and preparedness information for educational purposes only. The content is not a substitute for professional medical training, advice, diagnosis or treatment. In any emergency, always call <strong className="text-brand-red">112</strong> or <strong className="text-brand-red">021 480 7700 (Toll Free)</strong> immediately.
                 <br className="mt-2 block" />
-                <span className="text-white font-bold">Lifeline Communi-care (Pty) Ltd, it's members, facilitators and associates accept no liability for any loss, injury or damage arising from the use of this information. Participation is at your own risk.</span>
+                <span>Lifeline Communi-care (Pty) Ltd, it's members, facilitators and associates accept no liability for any loss, injury or damage arising from the use of this information. Participation is at your own risk.</span>
               </p>
             </div>
           </div>
