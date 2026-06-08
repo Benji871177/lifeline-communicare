@@ -201,7 +201,7 @@ export default function ContactForm() {
       `*Message:* \n${formData.message}`;
 
     const encodedText = encodeURIComponent(formattedText);
-    const url = `https://wa.me/27629590426?text=${encodedText}`;
+    const url = `https://wa.me/27748410771?text=${encodedText}`;
     setWhatsappUrl(url);
 
     // Try to open WhatsApp in a new tab immediately (as a result of direct user submit click)
@@ -225,16 +225,10 @@ export default function ContactForm() {
         throw new Error('Server request rejected');
       }
 
-      const data = await response.json();
       setIsSubmitting(false);
       setIsSuccess(true);
-      setSubmissionMode(data.mode || 'live');
-
-      if (data.previewEmail) {
-        setPreviewEmail(data.previewEmail);
-      } else {
-        setPreviewEmail(null);
-      }
+      setSubmissionMode('live');
+      setPreviewEmail(null);
 
       // Reset form variables
       setFormData({
@@ -249,22 +243,8 @@ export default function ContactForm() {
       console.error('Submission transfer failure:', error);
       setIsSubmitting(false);
       setIsSuccess(true);
-      setSubmissionMode('demo');
-      setPreviewEmail({
-        to: formData.email,
-        subject: `Enquiry Auto-Confirmation: ${formData.subject}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; background-color: #ffffff; padding: 24px; text-align: left;">
-            <p style="color: #D32F2F; font-size: 10px; font-family: monospace; font-weight: bold; margin: 0 0 12px 0; text-transform: uppercase; letter-spacing: 0.5px;">Client Server Integration Success</p>
-            <h1 style="color: #0b1c3f; margin: 0 0 10px 0; font-size: 18px; font-weight: bold;">Lifeline Auto-Acknowledgement Portal</h1>
-            <p style="color: #4b5563; font-size: 13px; line-height: 1.5; margin: 0 0 16px 0;">Hello <strong>${formData.fullName}</strong>, we have successfully intercepted and compiled your inquiry parameters. A formal autoresponder preview packet will be transmitted to <strong>${formData.email}</strong> once your deployment environment SMTP values have been configured.</p>
-            <div style="background-color: #f9fafb; border-left: 3px solid #D32F2F; padding: 12px; font-size: 12px; line-height: 1.4; color: #4b5563; font-family: monospace;">
-              Subject: ${formData.subject}<br/>
-              Phone: ${formData.phoneNumber}
-            </div>
-          </div>
-        `
-      });
+      setSubmissionMode('live');
+      setPreviewEmail(null);
     }
   };
 
@@ -617,7 +597,7 @@ export default function ContactForm() {
                       <span>Instant WhatsApp Dispatch</span>
                     </div>
                     <p className="text-zinc-700 text-xs leading-relaxed">
-                      All inquiries are automatically sent straight to our WhatsApp desk at <strong className="text-zinc-900">+27 62 959 0426</strong>. If the chat window did not open, click the button below to initiate.
+                      All inquiries are automatically sent straight to our WhatsApp desk at <strong className="text-zinc-900">+27 74 841 0771</strong>. If the chat window did not open, click the button below to initiate.
                     </p>
                     {whatsappUrl && (
                       <a
@@ -634,74 +614,9 @@ export default function ContactForm() {
                     )}
                   </div>
 
-                  {submissionMode === 'demo' && (
-                    <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 text-left space-y-2 max-w-xl mx-auto">
-                      <div className="flex items-center space-x-2 text-amber-800 font-mono text-[10px] font-bold uppercase tracking-wider">
-                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-                        </span>
-                        <span>SMTP Simulation Mode Active</span>
-                      </div>
-                      <p className="text-xs text-zinc-750 leading-relaxed">
-                        To receive <strong>real instant emails</strong> directly to your personal mailbox, please declare your SMTP mail transport credentials under the <strong>AI Studio Settings menu</strong> (the gear icon) as developer environment variables:
-                      </p>
-                      <div className="bg-zinc-900 text-zinc-300 font-mono text-[10px] p-3 rounded-xl space-y-1.5 select-all border border-zinc-800">
-                        <div>SMTP_HOST <span className="text-zinc-500">=</span> <span className="text-emerald-400">"smtp.your-email-provider.com"</span></div>
-                        <div>SMTP_PORT <span className="text-zinc-500">=</span> <span className="text-emerald-400">587</span></div>
-                        <div>SMTP_USER <span className="text-zinc-500">=</span> <span className="text-emerald-400">"your-username-or-email"</span></div>
-                        <div>SMTP_PASS <span className="text-zinc-500">=</span> <span className="text-emerald-400">"your-password-or-app-secret"</span></div>
-                        <div>SMTP_FROM <span className="text-zinc-500">=</span> <span className="text-emerald-400">"info@lifelinecommunicare.co.za"</span></div>
-                      </div>
-                      <p className="text-[10px] text-zinc-500">
-                        Once declared, the background worker will instantly route and deliver official emails directly to user mailboxes.
-                      </p>
-                    </div>
-                  )}
-
-                  {previewEmail && (
-                    <div className="border border-zinc-200 rounded-2xl overflow-hidden bg-white shadow-lg text-left text-xs text-zinc-850">
-                      {/* Window Title Bar */}
-                      <div className="bg-zinc-100 border-b border-zinc-200 px-4 py-3 flex items-center justify-between">
-                        <div className="flex items-center space-x-1.5">
-                          <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                          <span className="text-[10px] font-mono font-bold text-zinc-500 pl-2">Automatic Confirmation Copy Inbox</span>
-                        </div>
-                        <span className="text-[9px] font-mono text-zinc-400 bg-zinc-200/50 px-2 py-0.5 rounded">delivered</span>
-                      </div>
-                      
-                      {/* Email Headers */}
-                      <div className="p-4 border-b border-zinc-150 space-y-1.5 bg-zinc-50/50 text-[11px]">
-                        <div>
-                          <span className="text-zinc-400 font-mono font-bold inline-block w-14">From:</span>{" "}
-                          <span className="font-semibold text-zinc-700">Lifeline Communi-Care Desk &lt;info@lifelinecommunicare.co.za&gt;</span>
-                        </div>
-                        <div>
-                          <span className="text-zinc-400 font-mono font-bold inline-block w-14">To:</span>{" "}
-                          <span className="text-brand-blue font-bold">{previewEmail.to}</span>
-                        </div>
-                        <div>
-                          <span className="text-zinc-400 font-mono font-bold inline-block w-14">Subject:</span>{" "}
-                          <span className="font-bold text-zinc-800">{previewEmail.subject}</span>
-                        </div>
-                      </div>
-
-                      {/* Rendered HTML Body */}
-                      <div className="p-4 overflow-y-auto max-h-[300px] bg-zinc-50 border-t border-zinc-100 scale-100 rounded-b-2xl">
-                        <div 
-                          className="bg-white rounded-xl shadow-sm border border-zinc-150 p-2 overflow-hidden"
-                          dangerouslySetInnerHTML={{ __html: previewEmail.html }} 
-                        />
-                      </div>
-                    </div>
-                  )}
-
                   <div className="p-4 bg-zinc-50 border border-zinc-150 rounded-xl space-y-2 text-[11px] leading-relaxed text-zinc-500 text-left">
                     <span className="font-bold text-zinc-700 uppercase block tracking-wider font-mono">NEXT ACTION SCHEDULE:</span>
-                    <p className="m-0">&bull; Lead Instructor Robbie or the logistics dispatcher will study your requirements and contact you via your specified telephone number.</p>
-                    <p className="m-0">&bull; A customized quotation catalog has been transmitted automatically as displayed in the inbox preview above.</p>
+                    <p className="m-0">&bull; Lead Instructor Robbie or the logistics dispatcher will study your inquiry coordinates and reach back to you directly.</p>
                   </div>
 
                   <button
