@@ -25,6 +25,21 @@ export default function ContactForm() {
   const [previewEmail, setPreviewEmail] = useState<{ to: string; subject: string; html: string } | null>(null);
   const [submissionMode, setSubmissionMode] = useState<'live' | 'demo' | null>(null);
   const [whatsappUrl, setWhatsappUrl] = useState<string>('');
+  const [submittedWhatsappUrl, setSubmittedWhatsappUrl] = useState<string>('');
+
+  React.useEffect(() => {
+    const formattedText = `*New Inquiry Submitted via Website*\n` +
+      `-----------------------------------------\n` +
+      `*Name:* ${formData.fullName}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Phone:* ${formData.phoneNumber}\n` +
+      `*Company:* ${formData.companyName || 'N/A'}\n` +
+      `*Subject:* ${formData.subject}\n\n` +
+      `*Message:* \n${formData.message}`;
+
+    const encodedText = encodeURIComponent(formattedText);
+    setWhatsappUrl(`https://wa.me/27748410771?text=${encodedText}`);
+  }, [formData]);
 
   React.useEffect(() => {
     // 1. Check window.__selectedProduct on mount (e.g. redirected from supplies page)
@@ -186,30 +201,14 @@ export default function ContactForm() {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-
-    // Construct the WhatsApp URL
-    const formattedText = `*New Inquiry Submitted via Website*\n` +
-      `-----------------------------------------\n` +
-      `*Name:* ${formData.fullName}\n` +
-      `*Email:* ${formData.email}\n` +
-      `*Phone:* ${formData.phoneNumber}\n` +
-      `*Company:* ${formData.companyName || 'N/A'}\n` +
-      `*Subject:* ${formData.subject}\n\n` +
-      `*Message:* \n${formData.message}`;
-
-    const encodedText = encodeURIComponent(formattedText);
-    const url = `https://wa.me/27748410771?text=${encodedText}`;
-    setWhatsappUrl(url);
-
-    // Try to open WhatsApp in a new tab immediately (as a result of direct user submit click)
-    try {
-      window.open(url, '_blank');
-    } catch (popupErr) {
-      console.warn('Popup blocked, will offer direct link on Success screen:', popupErr);
+  const handleAnchorClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!validate()) {
+      e.preventDefault();
+      return;
     }
+
+    // Capture the current complete redirect URL before form is cleared on success
+    setSubmittedWhatsappUrl(whatsappUrl);
 
     setIsSubmitting(true);
     try {
@@ -221,9 +220,51 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error('Server request rejected');
-      }
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      setSubmissionMode('live');
+      setPreviewEmail(null);
+
+      // Reset form variables
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        companyName: '',
+        subject: 'First Aid Training Quote',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Submission transfer failure:', error);
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      setSubmissionMode('live');
+      setPreviewEmail(null);
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setSubmittedWhatsappUrl(whatsappUrl);
+
+    // Fallback dynamic popups try to open WhatsApp
+    try {
+      window.open(whatsappUrl, '_blank');
+    } catch (popupErr) {
+      console.warn('Popup blocked:', popupErr);
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -541,11 +582,15 @@ export default function ContactForm() {
                   </div>
 
                   {/* Submission triggers */}
-                  <div className="pt-4 text-left space-y-4">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="inline-flex items-center space-x-2.5 bg-brand-red hover:bg-brand-red/90 disabled:bg-zinc-400 text-white font-bold px-7.5 py-4 rounded-xl shadow-lg shadow-brand-red/10 hover:shadow-brand-red/20 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer disabled:-translate-y-0 text-sm leading-none"
+                  <div className="pt-4 text-left space-y-4 font-sans">
+                    <a
+                      href={whatsappUrl}
+                      onClick={handleAnchorClick}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center space-x-2.5 bg-brand-red hover:bg-brand-red/90 text-white font-bold px-7.5 py-4 rounded-xl shadow-lg shadow-brand-red/10 hover:shadow-brand-red/20 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-sm leading-none ${
+                        isSubmitting ? 'pointer-events-none opacity-50' : ''
+                      }`}
                     >
                       {isSubmitting ? (
                         <>
@@ -554,11 +599,11 @@ export default function ContactForm() {
                         </>
                       ) : (
                         <>
-                          <span>Submit Secure Enquiry</span>
-                          <Send className="w-4 h-4 text-white" />
+                          <span>Submit &amp; Send to WhatsApp</span>
+                          <Send className="w-4.5 h-4.5 text-white" />
                         </>
                       )}
-                    </button>
+                    </a>
 
                     <p className="text-[10px] text-zinc-500 leading-relaxed font-mono mt-3 pl-1 max-w-lg block">
                       * In compliance with POPIA, Lifeline Communi-Care (Pty) Ltd. preserves all submitted variables in strict confidence. Submitting does not execute a binding contract or live EMS dispatch. If you have an active, life-threatening emergency, please dial emergency services immediately.
@@ -572,7 +617,7 @@ export default function ContactForm() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  className="space-y-6 text-center py-6 max-w-xl mx-auto"
+                  className="space-y-6 text-center py-6 max-w-xl mx-auto font-sans"
                 >
                   <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 mx-auto border-2 border-green-200 shadow-sm animate-bounce">
                     <CheckCircle2 className="w-8 h-8" />
@@ -599,9 +644,9 @@ export default function ContactForm() {
                     <p className="text-zinc-700 text-xs leading-relaxed">
                       All inquiries are automatically sent straight to our WhatsApp desk at <strong className="text-zinc-900">+27 74 841 0771</strong>. If the chat window did not open, click the button below to initiate.
                     </p>
-                    {whatsappUrl && (
+                    {submittedWhatsappUrl && (
                       <a
-                        href={whatsappUrl}
+                        href={submittedWhatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold px-6 py-3.5 rounded-xl transition-all duration-250 w-full text-center text-sm shadow-md shadow-[#25D366]/10 hover:shadow-[#25D366]/20 cursor-pointer"
